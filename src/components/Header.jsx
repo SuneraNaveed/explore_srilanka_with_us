@@ -44,7 +44,7 @@ function Header() {
         <div className="logo-container">
           <Link to="/">
             <img
-              src="/src/assets/logo.png"
+              src="/logo.png"
               alt="Explore Sri Lanka"
               className="logo-image"
             />

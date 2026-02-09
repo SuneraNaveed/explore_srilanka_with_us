@@ -237,7 +237,7 @@ function Destinations() {
                 {destination.image && (
                   <div className="destination-image">
                     <img
-                      src={`/src/assets/Images/${destination.image}`}
+                      src={`/Images/${destination.image}`}
                       alt={destination.name}
                       loading="lazy"
                     />

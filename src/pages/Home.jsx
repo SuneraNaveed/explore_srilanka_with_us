@@ -22,77 +22,77 @@ function Home() {
       name: "Colombo",
       description: "Urban culture, food, and city experiences",
       path: "/destinations#colombo",
-      image: "src/assets/Images/colombo.jpg",
+      image: "/Images/colombo.jpg",
       className: "col-span-2",
     },
     {
       name: "Sigiriya",
       description: "Ancient rock fortress and cultural heritage",
       path: "/destinations#sigiriya",
-      image: "src/assets/Images/sigiriya.jpg",
+      image: "/Images/sigiriya.jpg",
       className: "col-span-2 row-span-2", // Featured Item
     },
     {
       name: "Kandy",
       description: "Sacred sites and hill country gateway",
       path: "/destinations#kandy",
-      image: "src/assets/Images/kandy.jpg",
+      image: "/Images/kandy.jpg",
       className: "col-span-1",
     },
     {
       name: "Nuwara Eliya",
       description: "Tea plantations and cool-climate landscapes",
       path: "/destinations#nuwara-eliya",
-      image: "src/assets/Images/nuwara eliya.jpg",
+      image: "/Images/nuwara eliya.jpg",
       className: "col-span-1",
     },
     {
       name: "Ella",
       description: "Scenic views, hiking, and relaxed mountain town",
       path: "/destinations#ella",
-      image: "src/assets/Images/ella.jpg",
+      image: "/Images/ella.jpg",
       className: "col-span-2",
     },
     {
       name: "Udawalawe",
       description: "Elephant safaris and wildlife experiences",
       path: "/destinations#udawalawe",
-      image: "src/assets/Images/udawalawe.jpg",
+      image: "/Images/udawalawe.jpg",
       className: "col-span-1",
     },
     {
       name: "Yala",
       description: "Leopard safaris and national park exploration",
       path: "/destinations#yala",
-      image: "src/assets/Images/yala.jpg",
+      image: "/Images/yala.jpg",
       className: "col-span-1",
     },
     {
       name: "Arugam Bay",
       description: "Surf culture and laid-back beach life",
       path: "/destinations#arugam-bay",
-      image: "src/assets/Images/Arugam Bay.jpg",
+      image: "/Images/Arugam Bay.jpg",
       className: "col-span-2",
     },
     {
       name: "Hambantota",
       description: "Nature, salt lakes, and southern landscapes",
       path: "/destinations#hambantota",
-      image: "src/assets/Images/Hambantota.jpg",
+      image: "/Images/Hambantota.jpg",
       className: "col-span-2",
     },
     {
       name: "Galle",
       description: "Colonial history and coastal charm",
       path: "/destinations#galle",
-      image: "src/assets/Images/galle.jpg",
+      image: "/Images/galle.jpg",
       className: "col-span-1",
     },
     {
       name: "Hikkaduwa",
       description: "Beaches, marine life, and relaxation",
       path: "/destinations#hikkaduwa",
-      image: "src/assets/Images/Hikkaduwa.jpg",
+      image: "/Images/Hikkaduwa.jpg",
       className: "col-span-1",
     },
   ];
@@ -282,7 +282,7 @@ function Home() {
 
             <div className="split-image-container animate-on-scroll delay-200">
               <img
-                src="src/assets/Images/Aerial view of tea plantation near the lake on sri lanka.jpg"
+                src="/Images/Aerial view of tea plantation near the lake on sri lanka.jpg"
                 alt="Sri Lanka Aerial View"
                 className="split-image"
                 loading="lazy"
