@@ -23,60 +23,66 @@ function DriverService() {
       {/* Hero Section */}
       <section className="page-hero">
         <div className="page-hero-content">
-          <FaCar className="hero-icon" />
-          <h1>Private Driver with Car in Sri Lanka</h1>
+          <h1>Private Driver with Car</h1>
           <p>
-            For travelers who prefer comfort, safety, and local knowledge, we
-            offer a private car with an experienced driver for your journey
-            across Sri Lanka.
+            Experience Sri Lanka with comfort and peace of mind. Our reliable
+            private car service connects you with the island's best local
+            drivers.
           </p>
         </div>
       </section>
 
-      {/* Why Choose Section */}
+      {/* Driver Service Info Grid */}
       <section className="section">
         <div className="container">
-          <h2 className="section-title text-center">
-            Why Choose a Private Driver?
-          </h2>
-          <div className="benefits-grid">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="benefit-card card">
-                <FaCheckCircle className="benefit-icon" />
-                <p>{benefit}</p>
+          <div className="driver-info-grid">
+            {/* Why Choose a Private Driver */}
+            <div className="service-card">
+              <div className="service-card-header">
+                <div className="service-card-icon">
+                  <FaCheckCircle />
+                </div>
+                <h2>Why Choose a Private Driver?</h2>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
+              <ul className="service-list">
+                {benefits.map((benefit, index) => (
+                  <li key={index}>{benefit}</li>
+                ))}
+              </ul>
+            </div>
 
-      {/* Suitable For Section */}
-      <section className="section bg-light">
-        <div className="container">
-          <h2 className="section-title text-center">Suitable For</h2>
-          <div className="suitable-grid">
-            {suitableFor.map((item, index) => (
-              <div key={index} className="suitable-card card">
-                <FaRoute className="suitable-icon" />
-                <h4>{item}</h4>
+            {/* Suitable For */}
+            <div className="service-card">
+              <div className="service-card-header">
+                <div className="service-card-icon">
+                  <FaRoute />
+                </div>
+                <h2>Suitable For</h2>
               </div>
-            ))}
+              <ul className="service-list route-list">
+                {suitableFor.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
           </div>
-          <p className="service-note text-center">
-            This service is optional and intended to support independent travel
-            rather than operate as a guided tour.
-          </p>
+
+          <div className="service-note-box">
+            <p>
+              Note: This service is intended to support independent travel and
+              flexibility rather than a strictly guided tour.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="section cta-section">
-        <div className="container text-center">
-          <FaUsers className="cta-icon" />
+      <section className="container">
+        <div className="cta-section">
           <h2>Interested in Our Driver Service?</h2>
           <p>
             Contact us to discuss your travel needs and receive a personalized
-            quote for private car service.
+            quote for a private car with driver.
           </p>
           <div className="cta-buttons">
             <Button variant="primary" size="lg" href="/contact">

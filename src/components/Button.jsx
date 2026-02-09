@@ -7,6 +7,7 @@ function Button({
   icon,
   onClick,
   href,
+  type = "button",
   className = "",
 }) {
   const classes = `btn btn-${variant} btn-${size} ${className}`;
@@ -21,7 +22,7 @@ function Button({
   }
 
   return (
-    <button onClick={onClick} className={classes}>
+    <button type={type} onClick={onClick} className={classes}>
       {icon && <span className="btn-icon">{icon}</span>}
       {children}
     </button>

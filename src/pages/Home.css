@@ -142,161 +142,279 @@
   line-height: 1.6;
 }
 
-/* What We Do */
+/* What We Do - Modern Layout */
 .what-we-do {
-  background: var(--color-bg-white);
-  border-radius: var(--radius-2xl);
+  background: linear-gradient(135deg, #ffffff 0%, #f9f8f4 100%);
+  border-radius: 32px;
   margin: var(--spacing-2xl) var(--spacing-lg);
   padding: var(--spacing-4xl) var(--spacing-2xl);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 8px 30px rgba(26, 60, 52, 0.04);
+  position: relative;
+  overflow: hidden;
+}
+
+.what-we-do::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(217, 119, 87, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
 }
 
 .what-we-do-content {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .what-we-do-content p {
-  font-size: var(--font-size-lg);
-  line-height: 1.8;
+  font-size: 1.125rem;
+  line-height: 1.9;
   text-align: center;
   color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-lg);
 }
 
-/* Why Choose Us */
+/* Why Choose Us - Modern Grid */
 .why-choose-us {
   background: var(--color-bg-cream);
 }
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--spacing-lg);
-  margin-top: var(--spacing-2xl);
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-3xl);
 }
 
 .feature-card {
   display: flex;
   align-items: flex-start;
-  gap: var(--spacing-md);
-  padding: var(--spacing-xl);
+  gap: var(--spacing-lg);
+  padding: var(--spacing-2xl);
   background: var(--color-bg-white);
-  border: 1px solid rgba(224, 229, 228, 0.6);
-  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(224, 229, 228, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(26, 60, 52, 0.04);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--color-primary), var(--color-accent));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(26, 60, 52, 0.08);
+  border-color: rgba(26, 60, 52, 0.1);
+}
+
+.feature-card:hover::before {
+  opacity: 1;
 }
 
 .feature-icon {
-  font-size: var(--font-size-2xl);
+  font-size: 2.5rem;
   color: var(--color-accent);
-  background: rgba(217, 119, 87, 0.1);
-  padding: 12px;
-  border-radius: var(--radius-full);
+  background: rgba(217, 119, 87, 0.08);
+  padding: 16px;
+  border-radius: 16px;
   flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .feature-card p {
   margin: 0;
   color: var(--color-text-primary);
-  font-size: 1.05rem;
+  font-size: 1.0625rem;
   font-weight: 500;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
-/* Popular Destinations */
+/* Popular Destinations - Modern Cards */
 .popular-destinations {
-  background: var(--color-bg-cream);
+  background: var(--color-bg-white);
 }
 
 .destinations-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: var(--spacing-lg);
-  margin-top: var(--spacing-2xl);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-3xl);
 }
 
 .destination-card {
   text-decoration: none;
   color: inherit;
-  padding: var(--spacing-xl);
-  background: var(--color-bg-white);
-  border: none;
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-sm);
-  transition: all var(--transition-base);
+  padding: var(--spacing-2xl);
+  background: linear-gradient(135deg, #ffffff 0%, #f9f8f4 100%);
+  border: 1px solid rgba(224, 229, 228, 0.4);
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(26, 60, 52, 0.04);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.destination-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.destination-card:hover::before {
+  transform: scaleX(1);
 }
 
 .destination-card:hover {
   transform: translateY(-8px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 12px 40px rgba(26, 60, 52, 0.1);
+  border-color: rgba(26, 60, 52, 0.15);
 }
 
 .destination-card h3 {
   font-family: var(--font-heading);
-  font-size: var(--font-size-xl);
+  font-size: 1.5rem;
   margin-bottom: var(--spacing-sm);
   color: var(--color-primary);
+  font-weight: 700;
 }
 
 .destination-card p {
   margin: 0;
   color: var(--color-text-secondary);
-  font-size: var(--font-size-sm);
+  font-size: 0.9375rem;
   line-height: 1.6;
 }
 
-/* Travel Experiences */
+/* Travel Experiences - Modern Grid */
 .travel-experiences {
-  background: var(--color-bg-white);
+  background: linear-gradient(135deg, #f9f8f4 0%, #ffffff 100%);
   position: relative;
   z-index: 1;
 }
 
 .experiences-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: var(--spacing-lg);
-  margin-top: var(--spacing-2xl);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-3xl);
 }
 
 .experience-card {
   text-align: center;
-  padding: var(--spacing-xl);
-  background: var(--color-bg-cream);
-  border: 1px solid transparent;
-  transition: all var(--transition-base);
+  padding: var(--spacing-2xl);
+  background: var(--color-bg-white);
+  border: 1px solid rgba(224, 229, 228, 0.3);
+  border-radius: 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(26, 60, 52, 0.04);
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
 }
 
 .experience-card:hover {
-  border-color: var(--color-accent);
-  background: var(--color-bg-white);
+  transform: translateY(-6px);
+  border-color: rgba(26, 60, 52, 0.15);
+  box-shadow: 0 8px 30px rgba(26, 60, 52, 0.08);
+  background: linear-gradient(135deg, #ffffff 0%, #f9f8f4 100%);
+}
+
+.experience-card:hover::before {
+  transform: scaleX(1);
 }
 
 .experience-icon {
-  font-size: 3rem;
+  font-size: 3.5rem;
   color: var(--color-primary);
-  background: none;
+  background: linear-gradient(135deg, rgba(26, 60, 52, 0.05), rgba(26, 60, 52, 0.1));
   -webkit-text-fill-color: initial;
-  margin-bottom: var(--spacing-md);
+  margin: 0 auto var(--spacing-lg);
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.experience-card:hover .experience-icon {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, rgba(217, 119, 87, 0.1), rgba(217, 119, 87, 0.15));
+  color: var(--color-accent);
 }
 
 .experience-card h4 {
-  font-size: 1.1rem;
+  font-size: 1.125rem;
   color: var(--color-primary);
   margin: 0;
   font-weight: 600;
+  line-height: 1.5;
 }
 
-/* Car Service */
+/* Car Service - Modern Layout */
 .car-service {
-  background: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-primary) 0%, #2D524F 100%);
   color: var(--color-white);
-  border-radius: var(--radius-2xl);
+  border-radius: 32px;
   margin: var(--spacing-2xl) var(--spacing-lg);
   padding: var(--spacing-4xl) var(--spacing-2xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.car-service::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -15%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
 }
 
 .car-service-content {
@@ -304,6 +422,8 @@
   grid-template-columns: 2fr 1fr;
   gap: var(--spacing-3xl);
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .car-service-text h2 {
@@ -313,18 +433,36 @@
 
 .car-service-text p,
 .car-service-text li {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: var(--font-size-lg);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.0625rem;
+  line-height: 1.7;
 }
 
 .car-service-text h4 {
   color: var(--color-accent);
   margin-top: var(--spacing-xl);
   margin-bottom: var(--spacing-md);
+  font-size: 1.25rem;
 }
 
 .car-service-text ul {
   margin-bottom: var(--spacing-xl);
+  list-style: none;
+  padding: 0;
+}
+
+.car-service-text li {
+  padding-left: var(--spacing-lg);
+  position: relative;
+  margin-bottom: var(--spacing-sm);
+}
+
+.car-service-text li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: bold;
 }
 
 .car-service-icon {
@@ -332,79 +470,65 @@
   align-items: center;
   justify-content: center;
   font-size: 200px;
-  color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.08);
 }
 
-/* How It Works */
+/* How It Works - Modern Steps */
 .how-it-works {
-  background: var(--color-bg-cream);
+  background: var(--color-bg-white);
 }
 
 .steps-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--spacing-lg);
-  margin-top: var(--spacing-2xl);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-2xl);
+  margin-top: var(--spacing-3xl);
 }
 
 .step-card {
   text-align: left;
-  padding: var(--spacing-xl);
-  background: transparent;
-  box-shadow: none;
-  border: none;
+  padding: var(--spacing-2xl);
+  background: linear-gradient(135deg, #f9f8f4 0%, #ffffff 100%);
+  box-shadow: 0 4px 16px rgba(26, 60, 52, 0.04);
+  border: 1px solid rgba(224, 229, 228, 0.3);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(26, 60, 52, 0.08);
+  border-color: rgba(26, 60, 52, 0.15);
 }
 
 .step-number {
-  width: 50px;
-  height: 50px;
-  background: var(--color-accent);
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
   color: var(--color-white);
-  border-radius: 12px;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--font-size-xl);
+  font-size: 1.5rem;
   font-weight: 700;
-  margin: 0 0 var(--spacing-md) 0;
+  margin: 0 0 var(--spacing-lg) 0;
+  box-shadow: 0 4px 12px rgba(217, 119, 87, 0.3);
 }
 
 .step-card h4 {
-  font-size: var(--font-size-xl);
+  font-size: 1.25rem;
   margin-bottom: var(--spacing-sm);
   color: var(--color-primary);
+  font-weight: 700;
 }
 
 .step-card p {
   margin: 0;
   color: var(--color-text-secondary);
   font-size: 1rem;
-}
-
-/* CTA Section */
-.cta-section {
-  background: var(--color-bg-white);
-  padding: var(--spacing-4xl) 0;
-}
-
-.cta-section h2 {
-  color: var(--color-primary);
-  font-size: var(--font-size-4xl);
-  margin-bottom: var(--spacing-lg);
-}
-
-.cta-description {
-  font-size: var(--font-size-lg);
-  color: var(--color-text-secondary);
-  max-width: 700px;
-  margin: 0 auto var(--spacing-2xl);
-}
-
-.cta-buttons {
-  display: flex;
-  gap: var(--spacing-md);
-  justify-content: center;
-  flex-wrap: wrap;
+  line-height: 1.6;
 }
 
 /* Closing Section */
@@ -461,7 +585,6 @@
 @media (max-width: 768px) {
   /* Hero transforms to full width or smaller card on mobile */
   .hero { 
-    min-height: auto; 
     margin: 10px; /* Minimal margin */
     border-radius: 24px;
     padding: 60px 20px; /* Vertical padding for content */

@@ -130,6 +130,18 @@ h4 { font-size: var(--font-size-2xl); }
 h5 { font-size: var(--font-size-xl); }
 h6 { font-size: var(--font-size-lg); }
 
+/* Global Hero Text Color Override */
+.page-hero-content h1,
+.page-hero-content p,
+.page-hero-content span,
+.page-hero-content .hero-icon,
+.hero-content h1,
+.hero-content p,
+.hero-content span,
+.hero-content h2 {
+  color: white !important;
+}
+
 p {
   margin-bottom: var(--spacing-md);
   color: var(--color-text-secondary);
@@ -192,6 +204,43 @@ li {
 .text-left { text-align: left; }
 .text-right { text-align: right; }
 
+/* Modern Section Titles */
+.section-title {
+  font-size: var(--font-size-4xl);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-3xl);
+  text-align: center;
+  display: block;
+  width: 100%;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  border-radius: 2px;
+}
+
+.text-left .section-title::after {
+  left: 0;
+  transform: none;
+}
+
+.section-subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  max-width: 700px;
+  margin: 0 auto var(--spacing-3xl);
+  line-height: 1.7;
+}
+
 .text-gradient {
   background: var(--gradient-primary);
   -webkit-background-clip: text;
@@ -223,20 +272,38 @@ li {
 .gap-lg { gap: var(--spacing-lg); }
 .gap-xl { gap: var(--spacing-xl); }
 
-/* Card Component - Updated for New Design */
+/* Card Component - Modern Design */
 .card {
   background: var(--color-bg-white);
-  border-radius: var(--radius-xl);
-  padding: var(--spacing-xl);
-  box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(224, 229, 228, 0.5);
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  border-radius: 24px; /* Larger, more modern radius */
+  padding: var(--spacing-2xl);
+  box-shadow: 0 4px 20px rgba(26, 60, 52, 0.06); /* Softer, more diffused shadow */
+  border: 1px solid rgba(224, 229, 228, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-8px);
-  box-shadow: var(--shadow-lg);
-  border-color: rgba(26, 60, 52, 0.1);
+  box-shadow: 0 12px 40px rgba(26, 60, 52, 0.12);
+  border-color: rgba(26, 60, 52, 0.15);
+}
+
+.card:hover::before {
+  opacity: 1;
 }
 
 /* Animations */
@@ -247,6 +314,75 @@ li {
 
 .animate-fade-in {
   animation: fadeIn 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* CTA Section - Global Styles */
+.cta-section {
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--spacing-4xl) 0;
+  border-radius: var(--radius-2xl);
+  margin: var(--spacing-2xl) var(--spacing-lg);
+}
+
+.cta-section h2,
+.cta-section h3 {
+  color: var(--color-white);
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--spacing-lg);
+}
+
+.cta-section p {
+  font-size: var(--font-size-lg);
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 700px;
+  margin: 0 auto var(--spacing-2xl);
+}
+
+.cta-description {
+  font-size: var(--font-size-lg);
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 700px;
+  margin: 0 auto var(--spacing-2xl);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Ensure buttons are visible in CTA sections */
+.cta-section .btn-outline {
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+
+.cta-section .btn-outline:hover {
+  background: var(--color-white);
+  color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+  .cta-section {
+    margin: var(--spacing-xl) var(--spacing-md);
+    padding: var(--spacing-3xl) var(--spacing-lg);
+  }
+  
+  .cta-section h2,
+  .cta-section h3 {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .cta-buttons .btn {
+    width: 100%;
+  }
 }
 
 /* Form Elements - Rounded & Clean */

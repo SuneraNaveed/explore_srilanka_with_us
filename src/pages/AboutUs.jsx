@@ -31,30 +31,33 @@ function AboutUs() {
         </div>
       </section>
 
-      {/* Vision Section */}
+      {/* Vision & Mission Grid */}
       <section className="section">
         <div className="container">
-          <div className="vision-section">
-            <FaEye className="section-icon-large" />
-            <div>
-              <h2>Our Vision</h2>
-              <p className="vision-text">
+          <div className="about-us-grid">
+            {/* Vision */}
+            <div className="about-card">
+              <div className="about-card-header">
+                <div className="about-card-icon">
+                  <FaEye />
+                </div>
+                <h2>Our Vision</h2>
+              </div>
+              <p>
                 To become a trusted digital travel platform showcasing the true
                 beauty of Sri Lanka while delivering authentic, responsible, and
                 memorable travel experiences.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Mission Section */}
-      <section className="section bg-light">
-        <div className="container">
-          <div className="mission-section">
-            <FaBullseye className="section-icon-large" />
-            <div>
-              <h2>Our Mission</h2>
+            {/* Mission */}
+            <div className="about-card">
+              <div className="about-card-header">
+                <div className="about-card-icon">
+                  <FaBullseye />
+                </div>
+                <h2>Our Mission</h2>
+              </div>
               <ul className="mission-list">
                 {mission.map((item, index) => (
                   <li key={index}>{item}</li>
@@ -65,14 +68,14 @@ function AboutUs() {
         </div>
       </section>
 
-      {/* Why Travel With Us */}
+      {/* Why Choose Us */}
       <section className="section">
         <div className="container">
-          <h2 className="section-title text-center">Why Travel with Us</h2>
+          <h2 className="section-title">Why Travel with Us?</h2>
           <div className="why-us-grid">
             {whyUs.map((item, index) => (
-              <div key={index} className="why-us-card card">
-                <FaCheckCircle className="why-us-icon" />
+              <div key={index} className="why-us-badge">
+                <FaCheckCircle className="why-us-icon-small" />
                 <p>{item}</p>
               </div>
             ))}

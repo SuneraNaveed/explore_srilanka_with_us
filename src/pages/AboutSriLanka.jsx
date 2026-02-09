@@ -62,118 +62,93 @@ function AboutSriLanka() {
         </div>
       </section>
 
-      {/* Why Visit */}
+      {/* Content Grid */}
       <section className="section">
         <div className="container">
-          <div className="content-section">
-            <div style={{ flex: 1 }}>
-              <div className="section-icon">
-                <FaLandmark />
+          <div className="about-grid">
+            {/* Why Visit */}
+            <div className="content-section">
+              <div className="section-header">
+                <div className="section-icon">
+                  <FaLandmark />
+                </div>
+                <h2>Why Visit Sri Lanka</h2>
               </div>
-              <h2>Why Visit Sri Lanka</h2>
               <ul className="feature-list">
                 {whyVisit.map((item, index) => (
                   <li key={index}>{item}</li>
                 ))}
               </ul>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Best Time to Visit */}
-      <section className="section bg-light">
-        <div className="container">
-          <div className="content-section">
-            <div className="section-icon">
-              <FaUmbrellaBeach />
-            </div>
-            <div>
-              <h2>Best Time to Visit Sri Lanka</h2>
+            {/* Best Time to Visit */}
+            <div className="content-section">
+              <div className="section-header">
+                <div className="section-icon">
+                  <FaUmbrellaBeach />
+                </div>
+                <h2>Best Time to Visit</h2>
+              </div>
               <p>
-                Sri Lanka is a year-round destination due to its two monsoon
-                systems.
+                Sri Lanka is a year-round destination with two distinct monsoon
+                systems affecting opposite sides of the island.
               </p>
               <div className="time-grid">
                 {bestTime.map((item, index) => (
-                  <div key={index} className="time-card card">
+                  <div key={index} className="time-card">
                     <h4>{item.period}</h4>
                     <p>{item.description}</p>
                   </div>
                 ))}
               </div>
-              <p style={{ marginTop: "var(--spacing-lg)" }}>
-                Travel plans can be customized depending on weather patterns and
-                personal preferences.
-              </p>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Culture & Traditions */}
-      <section className="section">
-        <div className="container">
-          <div className="content-section">
-            <div style={{ flex: 1 }}>
-              <div className="section-icon">
-                <FaMountain />
+            {/* Culture & Traditions */}
+            <div className="content-section">
+              <div className="section-header">
+                <div className="section-icon">
+                  <FaMountain />
+                </div>
+                <h2>Culture & Traditions</h2>
               </div>
-              <h2>Culture & Traditions</h2>
               <p>
-                Sri Lankan culture is deeply influenced by Buddhism, Hinduism,
-                Islam, and Christianity. Ancient temples, colorful festivals,
-                traditional dance forms, and daily rituals reflect the country's
-                spiritual heritage.
+                A vibrant blend of spiritual heritage, ancient kingdoms, and
+                diverse religious influences.
               </p>
-              <h4>Key highlights:</h4>
+              <h4>Highlights</h4>
               <ul className="feature-list">
                 <li>Vesak Festival (Buddhist celebrations)</li>
                 <li>Kandy Esala Perahera</li>
-                <li>Traditional Kandyan and Low-Country dances</li>
-                <li>Village lifestyles and local customs</li>
+                <li>Traditional Kandyan dance forms</li>
+                <li>Village lifestyles and customs</li>
               </ul>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Sri Lankan Food */}
-      <section className="section bg-light">
-        <div className="container">
-          <div className="content-section">
-            <div style={{ flex: 1 }}>
-              <div className="section-icon">
-                <FaUtensils />
+            {/* Sri Lankan Food */}
+            <div className="content-section">
+              <div className="section-header">
+                <div className="section-icon">
+                  <FaUtensils />
+                </div>
+                <h2>Sri Lankan Food</h2>
               </div>
-              <h2>Sri Lankan Food</h2>
-              <p>
-                Sri Lankan cuisine is known for its rich spices, fresh
-                ingredients, and bold flavors.
-              </p>
-              <h4>Popular dishes include:</h4>
+              <p>Famous for rich spices, fresh coconut, and bold flavors.</p>
+              <h4>Popular Dishes</h4>
               <ul className="feature-list">
                 {dishes.map((dish, index) => (
                   <li key={index}>{dish}</li>
                 ))}
               </ul>
-              <p style={{ marginTop: "var(--spacing-lg)" }}>
-                Vegetarian and vegan options are widely available.
-              </p>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Travel Tips */}
-      <section className="section">
-        <div className="container">
-          <div className="content-section">
-            <div className="section-icon">
-              <FaInfoCircle />
-            </div>
-            <div>
-              <h2>Travel Tips</h2>
+            {/* Travel Tips */}
+            <div className="content-section">
+              <div className="section-header">
+                <div className="section-icon">
+                  <FaInfoCircle />
+                </div>
+                <h2>Travel Tips</h2>
+              </div>
               <ul className="feature-list">
                 {travelTips.map((tip, index) => (
                   <li key={index}>{tip}</li>

@@ -5,6 +5,7 @@ function Destinations() {
     {
       id: "colombo",
       name: "Colombo",
+      image: "colombo.jpg",
       description:
         "Colombo, Sri Lanka's vibrant commercial capital, is a fascinating blend of colonial charm and modern ambition.",
       attractions: [
@@ -21,6 +22,7 @@ function Destinations() {
     {
       id: "sigiriya",
       name: "Sigiriya / Dambulla",
+      image: "sigiriya.jpg",
       description:
         "Sigiriya's iconic Lion Rock is a must-visit with breathtaking views, fascinating history, and nearby attractions.",
       attractions: [
@@ -38,6 +40,7 @@ function Destinations() {
     {
       id: "kandy",
       name: "Kandy",
+      image: "kandy.jpg",
       description:
         "Kandy, the spiritual heart of Sri Lanka, offers a perfect blend of religious heritage, colonial charm, and mountain adventure.",
       attractions: [
@@ -56,6 +59,7 @@ function Destinations() {
     {
       id: "nuwara-eliya",
       name: "Nuwara Eliya",
+      image: "nuwara eliya.jpg",
       description:
         'Known as "Little England," Nuwara Eliya is a misty highland retreat with tea estates and cascading waterfalls.',
       attractions: [
@@ -73,6 +77,7 @@ function Destinations() {
     {
       id: "ella",
       name: "Ella",
+      image: "ella.jpg",
       description:
         "Ella is a laid-back mountain village perfect for adventure seekers and hikers looking for spectacular views.",
       attractions: [
@@ -88,6 +93,7 @@ function Destinations() {
     {
       id: "udawalawe",
       name: "Udawalawe & Yala",
+      image: "udawalawe.jpg",
       description:
         'Premier wildlife destinations for seeing Sri Lanka\'s "Big Three": Elephants, Leopards, and Sloth Bears.',
       attractions: [
@@ -100,6 +106,7 @@ function Destinations() {
     {
       id: "arugam-bay",
       name: "Arugam Bay",
+      image: "Arugam Bay.jpg",
       description:
         "The East Coast's surfing mecca with world-class waves and untouched nature.",
       attractions: [
@@ -115,6 +122,7 @@ function Destinations() {
     {
       id: "hambantota",
       name: "Hambantota",
+      image: "Hambantota.jpg",
       description:
         "A rising tourism hub offering unique safari experiences and modern attractions.",
       attractions: [
@@ -129,6 +137,7 @@ function Destinations() {
     {
       id: "galle",
       name: "Galle",
+      image: "galle.jpg",
       description:
         "Historic fortified city with colonial charm and beautiful beaches.",
       attractions: [
@@ -145,6 +154,7 @@ function Destinations() {
     {
       id: "hikkaduwa",
       name: "Hikkaduwa",
+      image: "Hikkaduwa.jpg",
       description:
         "Vibrant beach town famous for coral reefs and water sports.",
       attractions: [
@@ -174,36 +184,47 @@ function Destinations() {
       </section>
 
       {/* Destinations List */}
-      <section className="section">
+      <section className="section destinations-section">
         <div className="container">
-          {destinations.map((destination, index) => (
-            <div
-              key={destination.id}
-              id={destination.id}
-              className={`destination-detail ${index % 2 === 0 ? "bg-white" : "bg-light"}`}
-            >
-              <h2>{destination.name}</h2>
-              <p className="destination-description">
-                {destination.description}
-              </p>
+          <div className="destinations-list">
+            {destinations.map((destination, index) => (
+              <div
+                key={destination.id}
+                id={destination.id}
+                className="destination-detail"
+              >
+                {destination.image && (
+                  <div className="destination-image">
+                    <img
+                      src={`/src/assets/Images/${destination.image}`}
+                      alt={destination.name}
+                    />
+                  </div>
+                )}
 
-              <div className="destination-content">
-                <div>
-                  <h3>Top Attractions & Things to Do</h3>
-                  <ul className="attractions-list">
-                    {destination.attractions.map((attraction, idx) => (
-                      <li key={idx}>{attraction}</li>
-                    ))}
-                  </ul>
-                </div>
+                <div className="destination-content-wrapper">
+                  <h2>{destination.name}</h2>
+                  <p className="destination-description">
+                    {destination.description}
+                  </p>
 
-                <div className="best-time-box card">
-                  <h4>Best Time to Visit</h4>
-                  <p>{destination.bestTime}</p>
+                  <div className="destination-content">
+                    <h3>Top Attractions</h3>
+                    <ul className="attractions-list">
+                      {destination.attractions.map((attraction, idx) => (
+                        <li key={idx}>{attraction}</li>
+                      ))}
+                    </ul>
+
+                    <div className="best-time-box">
+                      <h4>Best Time:</h4>
+                      <p>{destination.bestTime}</p>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
     </div>

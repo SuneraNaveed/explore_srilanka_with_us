@@ -64,15 +64,15 @@
 
 /* WhatsApp - Special Brand Color */
 .btn-whatsapp {
-  background: #25D366;
+  background: #65D46E; /* Bright green matching hero */
   color: var(--color-white);
-  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+  box-shadow: 0 4px 12px rgba(101, 212, 110, 0.2);
 }
 
 .btn-whatsapp:hover {
-  background: #20BD5A;
+  background: #5bc063;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+  box-shadow: 0 8px 24px rgba(101, 212, 110, 0.3);
 }
 
 /* Sizes */
@@ -99,7 +99,8 @@
 }
 
 @media (max-width: 768px) {
-  .btn {
-    width: 100%;
+  .btn-lg {
+    padding: 14px 32px;
+    font-size: var(--font-size-base);
   }
 }

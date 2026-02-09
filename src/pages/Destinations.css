@@ -1,115 +1,177 @@
+/* Hero Section - Compact & Modern */
+.page-hero {
+  position: relative;
+  height: 40vh;
+  min-height: 280px;
+  margin: 10px;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary);
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)),
+                    url('../assets/Images/Tamil women plucking tea leaves on plantation.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  max-width: 700px;
+  padding: 0 20px;
+}
+
+.page-hero h1 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.page-hero p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Destinations Compact Grid */
+.destinations-section {
+  padding: 40px 0; /* Reduced from global section padding */
+}
+
+.destinations-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
+}
+
 .destination-detail {
-  padding: var(--spacing-2xl);
-  margin-bottom: var(--spacing-2xl);
-  border-radius: var(--radius-2xl);
-  background: var(--color-bg-white);
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--color-gray-200);
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.destination-detail:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Image */
+.destination-image {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.destination-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Content */
+.destination-content-wrapper {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .destination-detail h2 {
-  font-size: var(--font-size-4xl);
+  font-size: 1.4rem;
   color: var(--color-primary);
-  margin-bottom: var(--spacing-md);
-  background: none;
-  -webkit-text-fill-color: initial;
+  margin-bottom: 10px;
+  font-weight: 700;
 }
 
 .destination-description {
-  font-size: var(--font-size-lg);
+  font-size: 0.9rem;
+  line-height: 1.5;
   color: var(--color-text-secondary);
-  margin-bottom: var(--spacing-2xl);
-  line-height: 1.7;
-  max-width: 900px;
-}
-
-.destination-content {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: var(--spacing-3xl);
+  margin-bottom: 15px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .destination-content h3 {
-  font-size: var(--font-size-2xl);
-  margin-bottom: var(--spacing-lg);
-  color: var(--color-primary);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 10px;
+  letter-spacing: 0.02em;
 }
 
 .attractions-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
   list-style: none;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: var(--spacing-md);
 }
 
 .attractions-list li {
-  padding: var(--spacing-sm) 16px;
-  background: var(--color-bg-cream);
-  border-radius: var(--radius-md);
-  color: var(--color-text-primary);
-  font-size: var(--font-size-base);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: background var(--transition-fast);
+  background: rgba(26, 60, 52, 0.04);
+  padding: 4px 12px;
+  border-radius: 4px; /* More modern than pill for compact design */
+  font-size: 0.8rem;
+  color: var(--color-primary);
+  font-weight: 500;
 }
 
-.attractions-list li:hover {
-  background: var(--color-gray-200);
-}
-
-.attractions-list li::before {
-  content: '•';
-  color: var(--color-accent);
-  font-size: 1.5rem;
-  line-height: 0;
-}
-
+/* Best Time Area */
 .best-time-box {
-  background: var(--color-primary); /* Dark theme for this box */
-  color: var(--color-white);
-  padding: var(--spacing-xl);
-  height: fit-content;
-  position: sticky;
-  top: 100px;
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-lg);
+  margin-top: auto;
+  padding-top: 15px;
+  border-top: 1px solid #f5f5f5;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
 }
 
 .best-time-box h4 {
-  color: var(--color-accent);
-  margin-bottom: var(--spacing-md);
-  font-size: var(--font-size-xl);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: #a0a0a0;
+  font-weight: 600;
+  margin: 0;
 }
 
 .best-time-box p {
-  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-primary);
   margin: 0;
-  font-size: var(--font-size-base);
-  line-height: 1.6;
 }
 
-.bg-white {
-  background: var(--color-bg-white);
-}
-
-/* bg-light in index.css is actually white, destination uses bg-cream vs white now */
-.destination-detail:nth-child(even) {
-  background: var(--color-bg-white);
-}
-.destination-detail:nth-child(odd) {
-  background: #F4F1EA; /* Slightly darker cream for contrast */
-  border-color: transparent;
-}
-
-@media (max-width: 1024px) {
-  .destination-content { grid-template-columns: 1fr; }
-  .best-time-box { position: static; margin-top: var(--spacing-lg); }
-  .attractions-list { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 768px) {
-  .destination-detail { padding: var(--spacing-xl) var(--spacing-md); }
-  .destination-detail h2 { font-size: 2.5rem; }
+/* Responsive */
+@media (max-width: 480px) {
+  .page-hero {
+    height: 30vh;
+    min-height: 200px;
+  }
+  
+  .destinations-list {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
 }

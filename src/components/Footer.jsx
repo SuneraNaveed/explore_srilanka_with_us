@@ -3,8 +3,11 @@ import {
   FaEnvelope,
   FaWhatsapp,
   FaFacebook,
-  FaInstagram,
-  FaTwitter,
+  FaTripadvisor,
+  FaPhoneAlt,
+  FaChevronRight,
+  FaMapMarkerAlt,
+  FaExternalLinkAlt,
 } from "react-icons/fa";
 import logo from "../assets/logo.png";
 import "./Footer.css";
@@ -25,92 +28,188 @@ function Footer() {
     { path: "/contact", label: "Contact Us" },
   ];
 
+  const travelResources = [
+    {
+      label: "Visa Information",
+      path: "https://www.eta.gov.lk/",
+      external: true,
+    },
+    { label: "Travel Insurance", path: "#" },
+    {
+      label: "Currency Converter",
+      path: "https://www.xe.com/",
+      external: true,
+    },
+  ];
+
   return (
-    <footer className="footer">
-      <div className="footer-container">
-        <div className="footer-grid">
-          {/* Brand Section */}
-          <div className="footer-section">
-            <img
-              src={logo}
-              alt="Explore Sri Lanka With Us"
-              className="footer-logo"
-            />
-            <p className="footer-description">
-              Your trusted travel planning partner for authentic Sri Lankan
-              experiences. Discover the Pearl of the Indian Ocean with carefully
-              curated itineraries.
+    <footer className="footer-v2">
+      {/* Newsletter / CTA Section */}
+      <div className="footer-cta-container">
+        <div className="footer-cta-card">
+          <div className="cta-content">
+            <h3>Ready to Explore Sri Lanka?</h3>
+            <p>
+              Join our newsletter for exclusive tour packages and travel tips
+              sent to your inbox.
             </p>
           </div>
+          <form className="cta-form" onSubmit={(e) => e.preventDefault()}>
+            <input type="email" placeholder="Your email address" required />
+            <button type="submit" className="cta-btn">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
 
-          {/* Quick Links */}
-          <div className="footer-section">
-            <h4 className="footer-heading">Quick Links</h4>
-            <ul className="footer-links">
-              {quickLinks.map((link) => (
-                <li key={link.path}>
-                  <Link to={link.path} className="footer-link">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div className="footer-section">
-            <h4 className="footer-heading">Our Services</h4>
-            <ul className="footer-links">
-              {serviceLinks.map((link) => (
-                <li key={link.path}>
-                  <Link to={link.path} className="footer-link">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div className="footer-section">
-            <h4 className="footer-heading">Get In Touch</h4>
-            <div className="contact-info">
-              <a
-                href="mailto:withusexploresrilanka@gmail.com"
-                className="contact-item"
-              >
-                <FaEnvelope className="contact-icon" />
-                <span>withusexploresrilanka@gmail.com</span>
-              </a>
-              <a
-                href="https://wa.me/94710733780"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="contact-item"
-              >
-                <FaWhatsapp className="contact-icon" />
-                <span>+94 71 07 33 780</span>
-              </a>
+      <div className="main-footer">
+        <div className="footer-wrapper">
+          <div className="footer-grid-v2">
+            {/* Brand Section */}
+            <div className="footer-col brand-col">
+              <Link to="/" className="f-logo">
+                <img src={logo} alt="Explore Sri Lanka" />
+              </Link>
+              <p className="f-desc">
+                Your premier companion in discovering the hidden gems of Sri
+                Lanka. We specialize in authentic, personalized experiences that
+                create memories for a lifetime.
+              </p>
+              <div className="f-socials">
+                <a
+                  href="https://www.facebook.com/share/1Gsd9iUb82/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="s-link"
+                  aria-label="Facebook"
+                >
+                  <FaFacebook />
+                </a>
+                <a
+                  href="https://www.tripadvisor.com/Profile/Passenger20233050521"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="s-link"
+                  aria-label="TripAdvisor"
+                >
+                  <FaTripadvisor />
+                </a>
+                <a
+                  href="https://wa.me/94710733780"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="s-link"
+                  aria-label="WhatsApp"
+                >
+                  <FaWhatsapp />
+                </a>
+              </div>
             </div>
-            <div className="social-links">
-              <a href="#" className="social-link" aria-label="Facebook">
-                <FaFacebook />
-              </a>
-              <a href="#" className="social-link" aria-label="Instagram">
-                <FaInstagram />
-              </a>
-              <a href="#" className="social-link" aria-label="Twitter">
-                <FaTwitter />
-              </a>
+
+            {/* Links Columns */}
+            <div className="footer-col">
+              <h4 className="f-title">Quick Links</h4>
+              <ul className="f-links">
+                {quickLinks.map((link) => (
+                  <li key={link.path}>
+                    <Link to={link.path}>
+                      <FaChevronRight className="f-icon" />
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="footer-col">
+              <h4 className="f-title">Our Services</h4>
+              <ul className="f-links">
+                {serviceLinks.map((link) => (
+                  <li key={link.path}>
+                    <Link to={link.path}>
+                      <FaChevronRight className="f-icon" />
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Resources Column */}
+            <div className="footer-col">
+              <h4 className="f-title">Resources</h4>
+              <ul className="f-links">
+                {travelResources.map((link) => (
+                  <li key={link.label}>
+                    {link.external ? (
+                      <a
+                        href={link.path}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <FaExternalLinkAlt className="f-icon sm" />
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link to={link.path}>
+                        <FaChevronRight className="f-icon" />
+                        {link.label}
+                      </Link>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Contact Bar */}
+          <div className="footer-contact-bar">
+            <div className="c-item">
+              <div className="c-icon-box">
+                <FaEnvelope />
+              </div>
+              <div className="c-info">
+                <span>Email Us</span>
+                <a href="mailto:withusexploresrilanka@gmail.com">
+                  withusexploresrilanka@gmail.com
+                </a>
+              </div>
+            </div>
+            <div className="c-item">
+              <div className="c-icon-box">
+                <FaPhoneAlt />
+              </div>
+              <div className="c-info">
+                <span>Call / WhatsApp</span>
+                <a href="tel:+94710733780">+94 71 07 33 780</a>
+              </div>
+            </div>
+            <div className="c-item">
+              <div className="c-icon-box">
+                <FaMapMarkerAlt />
+              </div>
+              <div className="c-info">
+                <span>Based In</span>
+                <strong>Sri Lanka</strong>
+              </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <div className="footer-bottom">
-          <p>
-            &copy; {currentYear} Explore Sri Lanka With Us. All rights reserved.
+      {/* Footer Bottom */}
+      <div className="footer-bottom-v2">
+        <div className="bottom-wrapper">
+          <p className="f-copyright">
+            &copy; {currentYear} <span>Explore Sri Lanka With Us</span>. All
+            rights reserved.
           </p>
-          <p className="footer-tagline">Crafted with ❤️ for travelers</p>
+          <div className="f-policy-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <span className="sc-text">Built with ❤️ for Travelers</span>
+          </div>
         </div>
       </div>
     </footer>

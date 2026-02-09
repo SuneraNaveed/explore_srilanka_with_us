@@ -86,35 +86,34 @@ function TourItineraries() {
       {/* Tours Section */}
       <section className="section">
         <div className="container">
-          {tours.map((tour, index) => (
-            <div
-              key={index}
-              className={`tour-section ${index % 2 === 0 ? "" : "tour-reverse"}`}
-            >
-              <div className="tour-icon-large">{tour.icon}</div>
-              <div className="tour-content">
-                <h2>{tour.title}</h2>
-                <p className="tour-description">{tour.description}</p>
+          <div className="itineraries-grid">
+            {tours.map((tour, index) => (
+              <div key={index} className="tour-section">
+                <div className="tour-icon-large">{tour.icon}</div>
+                <div className="tour-content">
+                  <h2>{tour.title}</h2>
+                  <p className="tour-description">{tour.description}</p>
 
-                <h4>Highlights include:</h4>
-                <ul className="tour-highlights">
-                  {tour.highlights.map((highlight, idx) => (
-                    <li key={idx}>{highlight}</li>
-                  ))}
-                </ul>
+                  <h4>Highlights include</h4>
+                  <ul className="tour-highlights">
+                    {tour.highlights.map((highlight, idx) => (
+                      <li key={idx}>{highlight}</li>
+                    ))}
+                  </ul>
 
-                <p className="tour-ideal">
-                  <strong>Ideal for:</strong> {tour.idealFor}
-                </p>
+                  <p className="tour-ideal">
+                    <strong>Ideal for:</strong> {tour.idealFor}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="section cta-section">
-        <div className="container text-center">
+      <section className="container">
+        <div className="cta-section">
           <h2>Ready to Plan Your Perfect Sri Lanka Journey?</h2>
           <p>
             Contact us to discuss your travel preferences and receive
