@@ -66,10 +66,10 @@ function AboutSriLanka() {
       <section className="section">
         <div className="container">
           <div className="content-section">
-            <div className="section-icon">
-              <FaLandmark />
-            </div>
-            <div>
+            <div style={{ flex: 1 }}>
+              <div className="section-icon">
+                <FaLandmark />
+              </div>
               <h2>Why Visit Sri Lanka</h2>
               <ul className="feature-list">
                 {whyVisit.map((item, index) => (
@@ -115,10 +115,10 @@ function AboutSriLanka() {
       <section className="section">
         <div className="container">
           <div className="content-section">
-            <div className="section-icon">
-              <FaMountain />
-            </div>
-            <div>
+            <div style={{ flex: 1 }}>
+              <div className="section-icon">
+                <FaMountain />
+              </div>
               <h2>Culture & Traditions</h2>
               <p>
                 Sri Lankan culture is deeply influenced by Buddhism, Hinduism,
@@ -142,10 +142,10 @@ function AboutSriLanka() {
       <section className="section bg-light">
         <div className="container">
           <div className="content-section">
-            <div className="section-icon">
-              <FaUtensils />
-            </div>
-            <div>
+            <div style={{ flex: 1 }}>
+              <div className="section-icon">
+                <FaUtensils />
+              </div>
               <h2>Sri Lankan Food</h2>
               <p>
                 Sri Lankan cuisine is known for its rich spices, fresh

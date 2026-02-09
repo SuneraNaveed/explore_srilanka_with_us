@@ -2,53 +2,56 @@
   display: grid;
   grid-template-columns: auto 1fr;
   gap: var(--spacing-3xl);
-  padding: var(--spacing-4xl) 0;
-  border-bottom: 2px solid var(--color-gray-100);
+  padding: var(--spacing-4xl) var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
+  background: var(--color-bg-white);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-sm);
+  align-items: center;
 }
 
 .tour-section:last-child {
-  border-bottom: none;
+  margin-bottom: 0;
 }
 
 .tour-reverse {
   grid-template-columns: 1fr auto;
 }
 
-.tour-reverse .tour-icon-large {
-  order: 2;
-}
-
-.tour-reverse .tour-content {
-  order: 1;
-}
+.tour-reverse .tour-icon-large { order: 2; }
+.tour-reverse .tour-content { order: 1; }
 
 .tour-icon-large {
-  font-size: 120px;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-size: 8rem;
+  color: var(--color-primary-light);
   display: flex;
   align-items: center;
   justify-content: center;
+  background: var(--color-bg-cream);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
 }
 
 .tour-content h2 {
   font-size: var(--font-size-3xl);
   margin-bottom: var(--spacing-md);
-  color: var(--color-gray-900);
+  color: var(--color-primary);
 }
 
 .tour-description {
   font-size: var(--font-size-lg);
-  color: var(--color-gray-700);
+  color: var(--color-text-secondary);
   margin-bottom: var(--spacing-xl);
+  max-width: 600px;
 }
 
 .tour-content h4 {
-  font-size: var(--font-size-xl);
+  font-size: 1.2rem;
   margin-bottom: var(--spacing-md);
-  color: var(--color-gray-800);
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .tour-highlights {
@@ -58,32 +61,40 @@
 }
 
 .tour-highlights li {
-  padding: var(--spacing-sm) 0;
-  padding-left: var(--spacing-xl);
+  padding: var(--spacing-xs) 0;
+  padding-left: 24px;
   position: relative;
-  color: var(--color-gray-700);
-  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  font-size: 1rem;
 }
 
 .tour-highlights li::before {
   content: '→';
   position: absolute;
   left: 0;
-  color: var(--color-primary);
+  color: var(--color-accent);
   font-weight: bold;
-  font-size: var(--font-size-xl);
 }
 
 .tour-ideal {
-  font-size: var(--font-size-base);
-  color: var(--color-gray-600);
-  font-style: italic;
+  font-size: 1rem;
+  color: var(--color-text-primary);
+  background: var(--color-bg-cream);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-lg);
+  display: inline-block;
+}
+
+.tour-ideal strong {
+  color: var(--color-primary);
 }
 
 .cta-section {
-  background: var(--gradient-sunset);
+  background: var(--color-primary);
   color: var(--color-white);
   padding: var(--spacing-4xl) 0;
+  border-radius: var(--radius-2xl);
+  margin: var(--spacing-2xl) var(--spacing-lg);
 }
 
 .cta-section h2 {
@@ -93,32 +104,20 @@
 
 .cta-section p {
   font-size: var(--font-size-lg);
-  color: rgba(255, 255, 255, 0.95);
+  color: rgba(255, 255, 255, 0.9);
   max-width: 700px;
   margin: 0 auto var(--spacing-2xl);
 }
 
-.cta-buttons {
-  display: flex;
-  gap: var(--spacing-lg);
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
 @media (max-width: 768px) {
-  .tour-section,
-  .tour-reverse {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
-  }
-
-  .tour-reverse .tour-icon-large,
-  .tour-reverse .tour-content {
-    order: initial;
-  }
-
-  .tour-icon-large {
-    font-size: 80px;
+  .tour-section, .tour-reverse { 
+    grid-template-columns: 1fr; 
     text-align: center;
+    padding: var(--spacing-2xl) var(--spacing-md);
   }
+  
+  .tour-icon-large { margin: 0 auto; width: 140px; height: 140px; font-size: 5rem; }
+  .tour-reverse .tour-icon-large { order: initial; }
+  .tour-reverse .tour-content { order: initial; }
+  .tour-highlights { text-align: left; display: inline-block; }
 }

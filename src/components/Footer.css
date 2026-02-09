@@ -1,8 +1,10 @@
 .footer {
-  background: linear-gradient(135deg, #1e3a8a 0%, #4c1d95 100%);
+  background: var(--color-primary); /* Deep Forest Green */
   color: var(--color-white);
   padding: var(--spacing-4xl) 0 var(--spacing-xl);
   margin-top: var(--spacing-4xl);
+  border-top-left-radius: var(--radius-2xl);
+  border-top-right-radius: var(--radius-2xl);
 }
 
 .footer-container {
@@ -13,7 +15,7 @@
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: 2fr 1fr 1fr 1.5fr; /* Optimized columns */
   gap: var(--spacing-3xl);
   margin-bottom: var(--spacing-3xl);
 }
@@ -21,27 +23,34 @@
 .footer-section {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);
+  gap: var(--spacing-lg);
 }
 
 .footer-logo {
-  height: 60px;
+  height: 60px; /* Increased to match header */
   width: auto;
+  max-width: 100%;
+  object-fit: contain; /* Prevents stretching */
+  object-position: left; /* Left align content */
   margin-bottom: var(--spacing-sm);
+  /* filter removed to show original logo colors */
 }
 
 .footer-description {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.7);
   font-size: var(--font-size-sm);
   line-height: 1.6;
+  max-width: 300px;
   margin: 0;
 }
 
 .footer-heading {
+  font-family: var(--font-heading);
   font-size: var(--font-size-lg);
   font-weight: 600;
   margin-bottom: var(--spacing-md);
   color: var(--color-white);
+  letter-spacing: 0.02em;
 }
 
 .footer-links {
@@ -50,15 +59,11 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-sm);
-}
-
-.footer-links li {
-  margin: 0;
+  gap: var(--spacing-md);
 }
 
 .footer-link {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
   font-size: var(--font-size-sm);
   transition: all var(--transition-fast);
@@ -66,8 +71,8 @@
 }
 
 .footer-link:hover {
-  color: var(--color-white);
-  transform: translateX(5px);
+  color: var(--color-accent); /* Hover accent color */
+  transform: translateX(4px);
 }
 
 .contact-info {
@@ -80,7 +85,7 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   font-size: var(--font-size-sm);
   transition: color var(--transition-fast);
@@ -92,21 +97,21 @@
 
 .contact-icon {
   font-size: var(--font-size-lg);
-  color: var(--color-secondary-light);
+  color: var(--color-accent);
 }
 
 .social-links {
   display: flex;
   gap: var(--spacing-md);
-  margin-top: var(--spacing-md);
+  margin-top: var(--spacing-sm);
 }
 
 .social-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   background: rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-full);
   color: var(--color-white);
@@ -116,38 +121,47 @@
 }
 
 .social-link:hover {
-  background: var(--color-white);
-  color: var(--color-primary);
-  transform: translateY(-3px);
+  background: var(--color-accent);
+  color: var(--color-white);
+  transform: translateY(-4px);
 }
 
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: var(--spacing-xl);
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
 }
 
 .footer-bottom p {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: var(--font-size-sm);
-  margin: var(--spacing-sm) 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: var(--font-size-xs);
+  margin: 0;
 }
 
-.footer-tagline {
-  font-style: italic;
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+  }
 }
 
 @media (max-width: 768px) {
   .footer {
     padding: var(--spacing-3xl) 0 var(--spacing-lg);
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
   }
 
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: var(--spacing-2xl);
+    gap: var(--spacing-xl);
   }
 
-  .footer-logo {
-    height: 50px;
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
   }
 }

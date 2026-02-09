@@ -1,23 +1,26 @@
 .destination-detail {
-  padding: var(--spacing-4xl) var(--spacing-lg);
+  padding: var(--spacing-2xl);
   margin-bottom: var(--spacing-2xl);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-2xl);
+  background: var(--color-bg-white);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-gray-200);
 }
 
 .destination-detail h2 {
   font-size: var(--font-size-4xl);
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--color-primary);
   margin-bottom: var(--spacing-md);
+  background: none;
+  -webkit-text-fill-color: initial;
 }
 
 .destination-description {
   font-size: var(--font-size-lg);
-  color: var(--color-gray-700);
+  color: var(--color-text-secondary);
   margin-bottom: var(--spacing-2xl);
   line-height: 1.7;
+  max-width: 900px;
 }
 
 .destination-content {
@@ -29,77 +32,84 @@
 .destination-content h3 {
   font-size: var(--font-size-2xl);
   margin-bottom: var(--spacing-lg);
-  color: var(--color-gray-900);
+  color: var(--color-primary);
 }
 
 .attractions-list {
   list-style: none;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: var(--spacing-md);
 }
 
 .attractions-list li {
-  padding: var(--spacing-sm) 0;
-  padding-left: var(--spacing-xl);
-  position: relative;
-  color: var(--color-gray-700);
+  padding: var(--spacing-sm) 16px;
+  background: var(--color-bg-cream);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
   font-size: var(--font-size-base);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background var(--transition-fast);
+}
+
+.attractions-list li:hover {
+  background: var(--color-gray-200);
 }
 
 .attractions-list li::before {
-  content: '📍';
-  position: absolute;
-  left: 0;
-  font-size: var(--font-size-lg);
+  content: '•';
+  color: var(--color-accent);
+  font-size: 1.5rem;
+  line-height: 0;
 }
 
 .best-time-box {
-  background: var(--gradient-ocean);
+  background: var(--color-primary); /* Dark theme for this box */
   color: var(--color-white);
   padding: var(--spacing-xl);
   height: fit-content;
   position: sticky;
   top: 100px;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
 }
 
 .best-time-box h4 {
-  color: var(--color-white);
+  color: var(--color-accent);
   margin-bottom: var(--spacing-md);
   font-size: var(--font-size-xl);
 }
 
 .best-time-box p {
-  color: rgba(255, 255, 255, 0.95);
+  color: rgba(255, 255, 255, 0.9);
   margin: 0;
   font-size: var(--font-size-base);
+  line-height: 1.6;
 }
 
 .bg-white {
-  background: var(--color-white);
+  background: var(--color-bg-white);
+}
+
+/* bg-light in index.css is actually white, destination uses bg-cream vs white now */
+.destination-detail:nth-child(even) {
+  background: var(--color-bg-white);
+}
+.destination-detail:nth-child(odd) {
+  background: #F4F1EA; /* Slightly darker cream for contrast */
+  border-color: transparent;
 }
 
 @media (max-width: 1024px) {
-  .destination-content {
-    grid-template-columns: 1fr;
-  }
-
-  .best-time-box {
-    position: static;
-  }
-
-  .attractions-list {
-    grid-template-columns: 1fr;
-  }
+  .destination-content { grid-template-columns: 1fr; }
+  .best-time-box { position: static; margin-top: var(--spacing-lg); }
+  .attractions-list { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
-  .destination-detail {
-    padding: var(--spacing-3xl) var(--spacing-md);
-  }
-
-  .destination-detail h2 {
-    font-size: var(--font-size-3xl);
-  }
+  .destination-detail { padding: var(--spacing-xl) var(--spacing-md); }
+  .destination-detail h2 { font-size: 2.5rem; }
 }

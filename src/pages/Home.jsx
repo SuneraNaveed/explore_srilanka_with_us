@@ -133,17 +133,21 @@ function Home() {
             match your interests, travel style, and pace.
           </p>
           <div className="hero-buttons animate-fade-in">
-            <Button variant="primary" size="lg" href="/contact">
-              Plan Your Sri Lanka Trip
-            </Button>
-            <Button
-              variant="whatsapp"
-              size="lg"
-              icon={<FaWhatsapp />}
-              href="https://wa.me/94710733780"
+            <button
+              className="btn btn-primary"
+              onClick={() => (window.location.href = "/contact")}
             >
-              Chat with Us on WhatsApp
-            </Button>
+              Plan Your Sri Lanka Trip
+            </button>
+            <button
+              className="btn btn-whatsapp"
+              onClick={() =>
+                (window.location.href = "https://wa.me/94710733780")
+              }
+            >
+              <FaWhatsapp style={{ fontSize: "1.2em" }} /> Chat with Us on
+              WhatsApp
+            </button>
           </div>
         </div>
       </section>
