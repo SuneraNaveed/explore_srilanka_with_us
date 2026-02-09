@@ -6,7 +6,8 @@ import {
   FaHeart,
   FaRoute,
   FaCar,
-  FaCheckCircle,
+  FaCheck,
+  FaArrowRight,
 } from "react-icons/fa";
 import Button from "../components/Button";
 import "./Home.css";
@@ -17,6 +18,7 @@ function Home() {
       name: "Colombo",
       description: "Urban culture, food, and city experiences",
       path: "/destinations#colombo",
+      image: "src/assets/Images/Colombo.jpg", // Placeholder if images aren't dynamic yet
     },
     {
       name: "Sigiriya",
@@ -46,7 +48,7 @@ function Home() {
     {
       name: "Yala",
       description: "Leopard safaris and national park exploration",
-      path: "/destinations#yala",
+      path: "/destinations#udawalawe",
     },
     {
       name: "Arugam Bay",
@@ -58,202 +60,229 @@ function Home() {
       description: "Nature, salt lakes, and southern landscapes",
       path: "/destinations#hambantota",
     },
-    {
-      name: "Galle",
-      description: "Colonial history and coastal charm",
-      path: "/destinations#galle",
-    },
-    {
-      name: "Hikkaduwa",
-      description: "Beaches, marine life, and relaxation",
-      path: "/destinations#hikkaduwa",
-    },
   ];
 
   const experiences = [
-    { title: "Cultural and Heritage Journeys", icon: <FaMapMarkedAlt /> },
-    { title: "Hill Country and Scenic Train Routes", icon: <FaRoute /> },
-    { title: "Wildlife and Safari Experiences", icon: <FaHeart /> },
-    { title: "Beach and Coastal Travel", icon: <FaUsers /> },
-    { title: "Slow Travel and Relaxed Routes", icon: <FaCheckCircle /> },
-    { title: "Fully Customized Sri Lanka Itineraries", icon: <FaCar /> },
+    {
+      title: "Cultural & Heritage",
+      icon: <FaMapMarkedAlt />,
+      desc: "Explore ancient cities and sacred sites.",
+    },
+    {
+      title: "Scenic Hill Country",
+      icon: <FaRoute />,
+      desc: "Train rides through tea plantations and misty mountains.",
+    },
+    {
+      title: "Wildlife Safaris",
+      icon: <FaHeart />,
+      desc: "Witness elephants and leopards in their natural habitat.",
+    },
+    {
+      title: "Beach & Coastal",
+      icon: <FaUsers />,
+      desc: "Relax on pristine beaches and explore coastal life.",
+    },
   ];
 
   const whyChooseUs = [
-    "In-depth local knowledge of Sri Lanka's key destinations",
-    "Well-structured itineraries based on realistic travel distances",
-    "Honest destination and experience recommendations",
-    "Flexible travel plans tailored to your interests and schedule",
-    "Optional local travel assistance when required",
+    "In-depth local knowledge",
+    "Well-structured itineraries",
+    "Honest recommendations",
+    "Flexible travel plans",
+    "Optional local support",
   ];
 
   const howItWorks = [
     {
       step: 1,
-      title: "Share Your Preferences",
-      description:
-        "Tell us your travel dates, interests, and preferred destinations.",
+      title: "Share Preferences",
+      description: "Tell us your interests and dates.",
     },
     {
       step: 2,
-      title: "Receive Itinerary Ideas",
-      description:
-        "Get personalized itinerary suggestions and destination guidance.",
+      title: "Get Suggestions",
+      description: "Receive personalized travel ideas.",
     },
     {
       step: 3,
       title: "Discuss Options",
-      description: "Review optional travel assistance if required.",
+      description: "Refine your plan with our help.",
     },
     {
       step: 4,
-      title: "Travel with Confidence",
-      description: "Finalize your plan and explore Sri Lanka independently.",
+      title: "Travel Confidently",
+      description: "Explore Sri Lanka your way.",
     },
   ];
 
   return (
     <div className="home">
-      {/* Hero Section */}
+      {/* Hero Section - Kept similar but ensured it uses global classes where applicable */}
       <section className="hero">
         <div className="hero-overlay"></div>
         <div className="hero-content">
-          <h1 className="hero-title animate-fade-in">
-            Discover Sri Lanka with Local Travel Insight
+          <h1 className="hero-title animate-fade-in text-white">
+            Discover Sri Lanka with Local Insight
           </h1>
-          <p className="hero-subtitle animate-fade-in">
-            Carefully planned itineraries covering Sri Lanka's culture, hill
-            country, wildlife, and coast.
-          </p>
-          <p className="hero-description animate-fade-in">
-            Sri Lanka is a compact island rich in history, natural beauty,
-            wildlife, and coastal charm. We help travelers plan meaningful
-            journeys across Sri Lanka through well-structured itineraries,
-            destination guidance, and personalized travel advice designed to
-            match your interests, travel style, and pace.
+          <p className="hero-subtitle animate-fade-in text-white">
+            Carefully planned itineraries covering culture, nature, and
+            wildlife.
           </p>
           <div className="hero-buttons animate-fade-in">
-            <button
-              className="btn btn-primary"
-              onClick={() => (window.location.href = "/contact")}
+            <Button variant="primary" size="lg" href="/contact">
+              Plan Your Trip
+            </Button>
+            <Button
+              variant="whatsapp"
+              size="lg"
+              href="https://wa.me/94710733780"
+              icon={<FaWhatsapp />}
             >
-              Plan Your Sri Lanka Trip
-            </button>
-            <button
-              className="btn btn-whatsapp"
-              onClick={() =>
-                (window.location.href = "https://wa.me/94710733780")
-              }
-            >
-              <FaWhatsapp style={{ fontSize: "1.2em" }} /> Chat with Us on
-              WhatsApp
-            </button>
+              Chat on WhatsApp
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* What We Do */}
-      <section className="section what-we-do">
+      {/* What We Do - Modernized */}
+      <section className="modern-section">
         <div className="container">
-          <h2 className="section-title text-center">What We Do</h2>
+          <div className="modern-intro">
+            <h2>What We Do</h2>
+            <p>Helping you navigate the Pearl of the Indian Ocean with ease.</p>
+          </div>
           <div className="what-we-do-content">
             <p>
               Planning a multi-destination trip in Sri Lanka requires careful
-              timing, realistic travel routes, and an understanding of local
-              conditions. Choosing the right mix of cities, nature, wildlife,
-              and beaches can make a significant difference to your overall
-              experience.
-            </p>
-            <p>
-              We support your travel planning by providing clear destination
-              insights, suggested itineraries, and local guidance. Our role is
-              to help you create a well-balanced travel plan that allows you to
-              explore Sri Lanka comfortably and independently.
+              timing and local knowledge. We support your planning by providing
+              clear insights, suggested itineraries, and honest guidance,
+              allowing you to explore comfortably and independently.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Why Travel with Us */}
-      <section className="section why-choose-us">
+      {/* Why Travel with Us - Premium Grid */}
+      <section className="modern-section bg-cream">
         <div className="container">
-          <h2 className="section-title text-center">Why Travel with Us</h2>
-          <p className="section-subtitle text-center">
-            We focus on thoughtful planning, honest guidance, and personalized
-            support.
-          </p>
-          <div className="features-grid">
+          <div className="modern-intro">
+            <h2>Why Travel with Us</h2>
+            <p>
+              Thoughtful planning, honest guidance, and personalized support.
+            </p>
+          </div>
+          <div
+            className="modern-grid"
+            style={{
+              gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+            }}
+          >
             {whyChooseUs.map((feature, index) => (
-              <div key={index} className="feature-card card">
-                <FaCheckCircle className="feature-icon" />
-                <p>{feature}</p>
+              <div
+                key={index}
+                className="premium-card"
+                style={{
+                  padding: "var(--spacing-xl)",
+                  alignItems: "center",
+                  textAlign: "center",
+                }}
+              >
+                <div
+                  className="premium-card-icon"
+                  style={{ marginBottom: "var(--spacing-md)" }}
+                >
+                  <FaCheck />
+                </div>
+                <h3 style={{ fontSize: "1.2rem", margin: 0 }}>{feature}</h3>
               </div>
             ))}
           </div>
-          <p
-            className="text-center"
-            style={{
-              marginTop: "var(--spacing-xl)",
-              fontSize: "var(--font-size-lg)",
-              fontWeight: 600,
-            }}
-          >
-            We help you plan with confidence, clarity, and peace of mind.
-          </p>
         </div>
       </section>
 
-      {/* Popular Destinations */}
-      <section className="section popular-destinations">
+      {/* Popular Destinations - Modern Grid */}
+      <section className="modern-section">
         <div className="container">
-          <h2 className="section-title text-center">
-            Popular Destinations in Sri Lanka
-          </h2>
-          <p className="section-subtitle text-center">
-            Our itineraries focus on Sri Lanka's most diverse and rewarding
-            destinations
-          </p>
-          <div className="destinations-grid">
+          <div className="modern-intro">
+            <h2>Popular Destinations</h2>
+            <p>Explore the most rewarding locations in Sri Lanka.</p>
+          </div>
+          <div className="modern-grid">
             {destinations.map((destination, index) => (
               <Link
                 key={index}
                 to={destination.path}
-                className="destination-card card"
+                className="premium-card destination-link-card"
               >
-                <h3>{destination.name}</h3>
-                <p>{destination.description}</p>
+                <div
+                  className="premium-card-body"
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    height: "100%",
+                  }}
+                >
+                  <h3
+                    style={{
+                      color: "var(--color-primary)",
+                      marginBottom: "var(--spacing-sm)",
+                    }}
+                  >
+                    {destination.name}
+                  </h3>
+                  <p style={{ color: "var(--color-text-secondary)", flex: 1 }}>
+                    {destination.description}
+                  </p>
+                  <div
+                    style={{
+                      marginTop: "var(--spacing-md)",
+                      color: "var(--color-accent)",
+                      fontWeight: 600,
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "8px",
+                    }}
+                  >
+                    Explore <FaArrowRight style={{ fontSize: "0.8rem" }} />
+                  </div>
+                </div>
               </Link>
             ))}
           </div>
-          <p className="text-center" style={{ marginTop: "var(--spacing-xl)" }}>
-            Each destination is selected to create a balanced journey across
-            culture, nature, wildlife, and coastline.
-          </p>
+          <div
+            className="text-center"
+            style={{ marginTop: "var(--spacing-2xl)" }}
+          >
+            <Button variant="outline" href="/destinations">
+              View All Destinations
+            </Button>
+          </div>
         </div>
       </section>
 
-      {/* Travel Experiences */}
-      <section className="section travel-experiences">
+      {/* Travel Experiences - Premium Cards */}
+      <section className="modern-section bg-cream">
         <div className="container">
-          <h2 className="section-title text-center">
-            Travel Experiences & Itineraries
-          </h2>
-          <p className="section-subtitle text-center">
-            Choose from curated itinerary ideas or request a customized travel
-            plan
-          </p>
-          <div className="experiences-grid">
-            {experiences.map((experience, index) => (
-              <div key={index} className="experience-card card">
-                <div className="experience-icon">{experience.icon}</div>
-                <h4>{experience.title}</h4>
+          <div className="modern-intro">
+            <h2>Travel Experiences</h2>
+            <p>Curated journeys designed for authentic discovery.</p>
+          </div>
+          <div className="modern-grid">
+            {experiences.map((exp, index) => (
+              <div key={index} className="premium-card">
+                <div className="premium-card-header">
+                  <div className="premium-card-icon">{exp.icon}</div>
+                  <h3>{exp.title}</h3>
+                </div>
+                <div className="premium-card-body">
+                  <p style={{ color: "var(--color-text-secondary)" }}>
+                    {exp.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
-          <p className="text-center" style={{ marginTop: "var(--spacing-xl)" }}>
-            All travel plans are flexible and designed around your preferred
-            pace and interests.
-          </p>
           <div
             className="text-center"
             style={{ marginTop: "var(--spacing-2xl)" }}
@@ -265,53 +294,44 @@ function Home() {
         </div>
       </section>
 
-      {/* Optional Car Service */}
-      <section className="section car-service">
+      {/* Private Driver Service - Premium CTA Style */}
+      <section className="premium-cta-section">
         <div className="container">
-          <div className="car-service-content">
-            <div className="car-service-text">
-              <h2>Optional Car with Driver Assistance</h2>
-              <p>
-                For travelers who prefer additional comfort and ease, we can
-                assist in arranging a private car with a local driver to support
-                travel between destinations.
-              </p>
-              <h4>This option is suitable for:</h4>
-              <ul>
-                <li>First-time visitors to Sri Lanka</li>
-                <li>Families, couples, and small groups</li>
-                <li>Travelers covering multiple destinations</li>
-              </ul>
-              <p
-                style={{ fontStyle: "italic", marginTop: "var(--spacing-md)" }}
-              >
-                This service is optional and intended to support independent
-                travel rather than operate as a guided tour.
-              </p>
-              <Button variant="secondary" size="lg" href="/driver-service">
-                Learn More About Driver Service
-              </Button>
-            </div>
-            <div className="car-service-icon">
-              <FaCar />
+          <div className="premium-cta-container">
+            <div className="premium-cta-card">
+              <div className="premium-cta-content">
+                <h2>Private Car with Local Driver</h2>
+                <p>
+                  For travelers who prefer additional comfort, we can arrange a
+                  private car with a trusted local driver to support your
+                  journey.
+                </p>
+                <div className="premium-cta-actions">
+                  <Button variant="primary" size="lg" href="/driver-service">
+                    Learn More
+                  </Button>
+                </div>
+              </div>
+              <div className="premium-cta-visual">
+                <FaCar className="premium-cta-icon" />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="section how-it-works">
+      {/* How It Works - Step Cards */}
+      <section className="modern-section bg-cream">
         <div className="container">
-          <h2 className="section-title text-center">How It Works</h2>
-          <p className="section-subtitle text-center">
-            We guide you during the planning stage, so your journey begins
-            smoothly
-          </p>
-          <div className="steps-grid">
+          <div className="modern-intro">
+            <h2>How It Works</h2>
+            <p>Our simple process to get you on your way.</p>
+          </div>
+          <div className="modern-grid">
             {howItWorks.map((item) => (
-              <div key={item.step} className="step-card card">
-                <div className="step-number">{item.step}</div>
-                <h4>{item.title}</h4>
+              <div key={item.step} className="premium-card step-card">
+                <div className="step-count">{item.step}</div>
+                <h3>{item.title}</h3>
                 <p>{item.description}</p>
               </div>
             ))}
@@ -319,39 +339,26 @@ function Home() {
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="section cta-section">
+      {/* Final CTA */}
+      <section className="premium-cta-section">
         <div className="container text-center">
-          <h2>Start Planning Your Sri Lanka Journey</h2>
-          <p className="cta-description">
-            Whether you are exploring Sri Lanka for the first time or returning
-            to see more, we help you plan a meaningful and well-structured
-            travel experience.
-          </p>
+          <div className="modern-intro">
+            {" "}
+            {/* Reusing modern-intro for centering and sizing */}
+            <h2>Start Planning Your Journey</h2>
+            <p>
+              Whether it's your first time or a return visit, we help you plan a
+              meaningful experience.
+            </p>
+          </div>
           <div className="cta-buttons">
             <Button variant="primary" size="lg" href="/contact">
-              Start Planning Your Trip
+              Start Planning
             </Button>
             <Button variant="outline" size="lg" href="/about-us">
-              Learn More About Us
+              About Us
             </Button>
           </div>
-        </div>
-      </section>
-
-      {/* Closing Section */}
-      <section className="section closing-section">
-        <div className="container text-center">
-          <p className="closing-text">
-            From cultural cities and misty hills to wildlife parks and coastal
-            towns, Sri Lanka offers a journey full of variety and discovery. Our
-            goal is to help you experience the island in a way that feels
-            personal, balanced, and authentic.
-          </p>
-          <p className="closing-tagline">
-            Let us help you design a Sri Lanka journey that reflects your travel
-            style and interests.
-          </p>
         </div>
       </section>
     </div>

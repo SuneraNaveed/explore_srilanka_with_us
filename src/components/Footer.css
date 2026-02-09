@@ -2,8 +2,8 @@
   background: var(--color-primary);
   color: var(--color-white);
   position: relative;
-  padding-top: var(--spacing-4xl);
-  margin-top: var(--spacing-4xl);
+  padding-top: var(--spacing-2xl);
+  margin-top: var(--spacing-2xl);
   border-top-left-radius: var(--radius-2xl);
   border-top-right-radius: var(--radius-2xl);
 }
@@ -20,7 +20,7 @@
 }
 
 .main-footer {
-  padding-bottom: 60px;
+  padding-bottom: var(--spacing-3xl);
 }
 
 .footer-wrapper {
@@ -32,13 +32,13 @@
 .footer-grid-v2 {
   display: grid;
   grid-template-columns: 1.8fr 1fr 1fr 1fr;
-  gap: 40px;
-  margin-bottom: 60px;
+  gap: var(--spacing-2xl);
+  margin-bottom: var(--spacing-3xl);
 }
 
 /* Brand Column */
 .brand-col .f-logo img {
-  height: 60px;
+  height: var(--spacing-3xl);
   width: auto;
   margin-bottom: var(--spacing-lg);
   border-radius: 0;
@@ -124,18 +124,18 @@
 .footer-contact-bar {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 30px;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-xl);
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: var(--radius-xl);
-  margin-top: 40px;
+  margin-top: var(--spacing-2xl);
 }
 
 .c-item {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: var(--spacing-md);
 }
 
 .c-icon-box {
@@ -169,7 +169,7 @@
 /* Footer Bottom */
 .footer-bottom-v2 {
   background: rgba(0, 0, 0, 0.2);
-  padding: 25px 0;
+  padding: var(--spacing-lg) 0;
 }
 
 .bottom-wrapper {
@@ -193,7 +193,7 @@
 
 .f-policy-links {
   display: flex;
-  gap: 24px;
+  gap: var(--spacing-lg);
 }
 
 .f-policy-links a {

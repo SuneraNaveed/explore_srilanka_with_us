@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Button.css";
 
 function Button({
@@ -13,11 +14,30 @@ function Button({
   const classes = `btn btn-${variant} btn-${size} ${className}`;
 
   if (href) {
+    const isExternal =
+      href.startsWith("http") ||
+      href.startsWith("mailto:") ||
+      href.startsWith("tel:");
+
+    if (isExternal) {
+      return (
+        <a
+          href={href}
+          className={classes}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {icon && <span className="btn-icon">{icon}</span>}
+          {children}
+        </a>
+      );
+    }
+
     return (
-      <a href={href} className={classes}>
+      <Link to={href} className={classes}>
         {icon && <span className="btn-icon">{icon}</span>}
         {children}
-      </a>
+      </Link>
     );
   }
 

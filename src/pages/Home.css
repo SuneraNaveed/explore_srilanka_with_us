@@ -1,19 +1,18 @@
-/* Hero Section - Modern & Rounded */
+/* Home Page Specific Styles */
 .hero {
   position: relative;
-  height: 85vh; /* Fixed height for the hero card look */
+  height: 85vh;
   min-height: 600px;
-  max-height: 900px;
-  margin: 20px 20px 60px 20px; /* Margin top/sides + bottom spacing */
-  border-radius: 48px; /* Large rounded corners */
+  margin: 15px;
+  border-radius: 40px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1); /* Soft shadow */
+  /* background: var(--color-primary); -> Removed to let image show fully or handle via overlay */
+  box-shadow: var(--shadow-xl);
 }
 
-/* Background Image Layer */
 .hero::before {
   content: '';
   position: absolute;
@@ -21,625 +20,87 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../assets/Images/7ZM1XLJZRMSK0R.jpg'); /* User provided hero image */
+  background-image: url('../assets/Images/7ZM1XLJZRMSK0R.jpg');
   background-size: cover;
   background-position: center;
   z-index: 1;
 }
 
-/* Overlay Layer - Darken for text readability */
 .hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6));
   z-index: 2;
-  display: block; /* Ensure it's visible */
 }
 
-/* Content Layer */
 .hero-content {
   position: relative;
   z-index: 3;
-  width: 100%;
-  max-width: 1200px;
-  padding: 0 40px;
   text-align: center;
+  max-width: 900px;
+  padding: 0 var(--spacing-2xl);
   color: white;
 }
 
 .hero-title {
-  font-family: var(--font-heading);
-  font-size: 3.5rem; /* Large impact heading */
-  font-weight: 700;
-  margin-bottom: 24px;
-  line-height: 1.2;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-  color: #ffffff; /* Explicit white for readability */
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.1;
+  letter-spacing: -2px;
 }
 
 .hero-subtitle {
-  font-size: 1.25rem;
-  max-width: 800px;
-  margin: 0 auto 20px auto;
-  line-height: 1.6;
-  opacity: 1;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
-  color: rgba(255, 255, 255, 0.95);
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  margin-bottom: var(--spacing-md);
+  opacity: 0.95;
+  font-weight: 500;
 }
 
 .hero-description {
-  font-size: 1.1rem;
-  max-width: 1000px;
-  margin: 0 auto 40px auto;
+  font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+  margin-bottom: var(--spacing-2xl);
+  opacity: 0.9;
   line-height: 1.7;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
-  color: rgba(255, 255, 255, 0.9);
 }
 
 .hero-buttons {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: var(--spacing-md);
   flex-wrap: wrap;
 }
 
-/* Custom Button Styles for Hero */
-.hero-buttons .btn {
-  border-radius: 50px; /* Pill shape */
-  padding: 14px 32px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  border: none;
-}
-
-.hero-buttons .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-/* Primary Hero Button (Dark Green) */
-.hero-buttons .btn-primary {
-  background-color: #1A3C34; /* Dark Green */
+/* Step Count for Start Planning Section */
+.step-count {
+  width: 50px;
+  height: 50px;
+  background: var(--color-accent);
   color: white;
-}
-
-.hero-buttons .btn-primary:hover {
-  background-color: #142f29;
-}
-
-/* WhatsApp Hero Button (Bright Green) */
-.hero-buttons .btn-whatsapp {
-  background-color: #65D46E; /* Bright/Lime Green matching screenshot */
-  color: white;
-}
-
-.hero-buttons .btn-whatsapp:hover {
-  background-color: #5bc063;
-}
-.section-title {
-  font-family: var(--font-heading);
-  font-size: var(--font-size-4xl);
-  margin-bottom: var(--spacing-md);
-  color: var(--color-primary);
-  background: none;
-  -webkit-text-fill-color: initial;
-}
-
-.section-subtitle {
-  font-size: var(--font-size-lg);
-  color: var(--color-text-secondary);
-  margin-bottom: var(--spacing-3xl);
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.6;
-}
-
-/* What We Do - Modern Layout */
-.what-we-do {
-  background: linear-gradient(135deg, #ffffff 0%, #f9f8f4 100%);
-  border-radius: 32px;
-  margin: var(--spacing-2xl) var(--spacing-lg);
-  padding: var(--spacing-4xl) var(--spacing-2xl);
-  box-shadow: 0 8px 30px rgba(26, 60, 52, 0.04);
-  position: relative;
-  overflow: hidden;
-}
-
-.what-we-do::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -10%;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(217, 119, 87, 0.05) 0%, transparent 70%);
-  border-radius: 50%;
-}
-
-.what-we-do-content {
-  max-width: 900px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
-
-.what-we-do-content p {
-  font-size: 1.125rem;
-  line-height: 1.9;
-  text-align: center;
-  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 1.4rem;
   margin-bottom: var(--spacing-lg);
+  box-shadow: 0 10px 20px rgba(217, 119, 87, 0.2);
 }
 
-/* Why Choose Us - Modern Grid */
-.why-choose-us {
-  background: var(--color-bg-cream);
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: var(--spacing-xl);
-  margin-top: var(--spacing-3xl);
-}
-
-.feature-card {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--spacing-lg);
-  padding: var(--spacing-2xl);
-  background: var(--color-bg-white);
-  border: 1px solid rgba(224, 229, 228, 0.3);
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(26, 60, 52, 0.04);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.feature-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: linear-gradient(180deg, var(--color-primary), var(--color-accent));
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.feature-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(26, 60, 52, 0.08);
-  border-color: rgba(26, 60, 52, 0.1);
-}
-
-.feature-card:hover::before {
-  opacity: 1;
-}
-
-.feature-icon {
-  font-size: 2.5rem;
-  color: var(--color-accent);
-  background: rgba(217, 119, 87, 0.08);
-  padding: 16px;
-  border-radius: 16px;
-  flex-shrink: 0;
-  width: 64px;
-  height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.feature-card p {
-  margin: 0;
-  color: var(--color-text-primary);
-  font-size: 1.0625rem;
-  font-weight: 500;
-  line-height: 1.6;
-}
-
-/* Popular Destinations - Modern Cards */
-.popular-destinations {
-  background: var(--color-bg-white);
-}
-
-.destinations-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: var(--spacing-xl);
-  margin-top: var(--spacing-3xl);
-}
-
-.destination-card {
-  text-decoration: none;
-  color: inherit;
-  padding: var(--spacing-2xl);
-  background: linear-gradient(135deg, #ffffff 0%, #f9f8f4 100%);
-  border: 1px solid rgba(224, 229, 228, 0.4);
-  border-radius: 20px;
-  box-shadow: 0 4px 16px rgba(26, 60, 52, 0.04);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-}
-
-.destination-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-}
-
-.destination-card:hover::before {
-  transform: scaleX(1);
-}
-
-.destination-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(26, 60, 52, 0.1);
-  border-color: rgba(26, 60, 52, 0.15);
-}
-
-.destination-card h3 {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  margin-bottom: var(--spacing-sm);
-  color: var(--color-primary);
-  font-weight: 700;
-}
-
-.destination-card p {
-  margin: 0;
-  color: var(--color-text-secondary);
-  font-size: 0.9375rem;
-  line-height: 1.6;
-}
-
-/* Travel Experiences - Modern Grid */
-.travel-experiences {
-  background: linear-gradient(135deg, #f9f8f4 0%, #ffffff 100%);
-  position: relative;
-  z-index: 1;
-}
-
-.experiences-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: var(--spacing-xl);
-  margin-top: var(--spacing-3xl);
-}
-
-.experience-card {
-  text-align: center;
-  padding: var(--spacing-2xl);
-  background: var(--color-bg-white);
-  border: 1px solid rgba(224, 229, 228, 0.3);
-  border-radius: 20px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 16px rgba(26, 60, 52, 0.04);
-  position: relative;
-  overflow: hidden;
-}
-
-.experience-card::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-}
-
-.experience-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(26, 60, 52, 0.15);
-  box-shadow: 0 8px 30px rgba(26, 60, 52, 0.08);
-  background: linear-gradient(135deg, #ffffff 0%, #f9f8f4 100%);
-}
-
-.experience-card:hover::before {
-  transform: scaleX(1);
-}
-
-.experience-icon {
-  font-size: 3.5rem;
-  color: var(--color-primary);
-  background: linear-gradient(135deg, rgba(26, 60, 52, 0.05), rgba(26, 60, 52, 0.1));
-  -webkit-text-fill-color: initial;
-  margin: 0 auto var(--spacing-lg);
-  width: 80px;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 20px;
-  transition: all 0.3s ease;
-}
-
-.experience-card:hover .experience-icon {
-  transform: scale(1.1);
-  background: linear-gradient(135deg, rgba(217, 119, 87, 0.1), rgba(217, 119, 87, 0.15));
-  color: var(--color-accent);
-}
-
-.experience-card h4 {
-  font-size: 1.125rem;
-  color: var(--color-primary);
-  margin: 0;
-  font-weight: 600;
-  line-height: 1.5;
-}
-
-/* Car Service - Modern Layout */
-.car-service {
-  background: linear-gradient(135deg, var(--color-primary) 0%, #2D524F 100%);
-  color: var(--color-white);
-  border-radius: 32px;
-  margin: var(--spacing-2xl) var(--spacing-lg);
-  padding: var(--spacing-4xl) var(--spacing-2xl);
-  position: relative;
-  overflow: hidden;
-}
-
-.car-service::before {
-  content: '';
-  position: absolute;
-  top: -30%;
-  right: -15%;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
-  border-radius: 50%;
-}
-
-.car-service-content {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: var(--spacing-3xl);
-  align-items: center;
-  position: relative;
-  z-index: 1;
-}
-
-.car-service-text h2 {
-  color: var(--color-white);
-  margin-bottom: var(--spacing-lg);
-}
-
-.car-service-text p,
-.car-service-text li {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 1.0625rem;
-  line-height: 1.7;
-}
-
-.car-service-text h4 {
-  color: var(--color-accent);
-  margin-top: var(--spacing-xl);
-  margin-bottom: var(--spacing-md);
-  font-size: 1.25rem;
-}
-
-.car-service-text ul {
-  margin-bottom: var(--spacing-xl);
-  list-style: none;
-  padding: 0;
-}
-
-.car-service-text li {
-  padding-left: var(--spacing-lg);
-  position: relative;
-  margin-bottom: var(--spacing-sm);
-}
-
-.car-service-text li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  color: var(--color-accent);
-  font-weight: bold;
-}
-
-.car-service-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 200px;
-  color: rgba(255, 255, 255, 0.08);
-}
-
-/* How It Works - Modern Steps */
-.how-it-works {
-  background: var(--color-bg-white);
-}
-
-.steps-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--spacing-2xl);
-  margin-top: var(--spacing-3xl);
-}
-
-.step-card {
-  text-align: left;
-  padding: var(--spacing-2xl);
-  background: linear-gradient(135deg, #f9f8f4 0%, #ffffff 100%);
-  box-shadow: 0 4px 16px rgba(26, 60, 52, 0.04);
-  border: 1px solid rgba(224, 229, 228, 0.3);
-  border-radius: 20px;
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.step-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(26, 60, 52, 0.08);
-  border-color: rgba(26, 60, 52, 0.15);
-}
-
-.step-number {
-  width: 56px;
-  height: 56px;
-  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
-  color: var(--color-white);
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin: 0 0 var(--spacing-lg) 0;
-  box-shadow: 0 4px 12px rgba(217, 119, 87, 0.3);
-}
-
-.step-card h4 {
-  font-size: 1.25rem;
-  margin-bottom: var(--spacing-sm);
-  color: var(--color-primary);
-  font-weight: 700;
-}
-
-.step-card p {
-  margin: 0;
-  color: var(--color-text-secondary);
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-/* Closing Section */
-.closing-section {
-  background: var(--color-bg-cream);
-  padding: var(--spacing-4xl) 0;
-}
-
-.closing-text {
-  font-size: var(--font-size-xl);
-  line-height: 1.6;
-  max-width: 900px;
-  margin: 0 auto var(--spacing-xl);
-  color: var(--color-primary);
-  font-weight: 500;
-}
-
-.closing-tagline {
-  font-size: var(--font-size-2xl);
-  font-weight: 700;
-  color: var(--color-accent);
-  font-family: var(--font-heading);
-}
-
-/* Responsive Styles */
-/* Responsive Styles */
-@media (max-width: 1024px) {
+/* Responsive */
+@media (max-width: 768px) {
   .hero {
     height: auto;
-    min-height: 500px;
-    margin: 15px; 
-    border-radius: 32px;
+    padding: var(--spacing-4xl) var(--spacing-md);
+    margin: 10px;
   }
   
-  .hero-title { 
-    font-size: 2.8rem; 
-  }
-  
-  .car-service-content { 
-    grid-template-columns: 1fr; 
-    text-align: center;
-  }
-  
-  .car-service-icon { 
-    display: none; 
-  }
-  
-  .what-we-do, .car-service { 
-    margin: var(--spacing-xl) var(--spacing-md); 
-    padding: var(--spacing-2xl) var(--spacing-lg); 
-  }
-}
-
-@media (max-width: 768px) {
-  /* Hero transforms to full width or smaller card on mobile */
-  .hero { 
-    margin: 10px; /* Minimal margin */
-    border-radius: 24px;
-    padding: 60px 20px; /* Vertical padding for content */
-  }
-  
-  .hero-content {
-    padding: 0;
-  }
-
-  .hero-title { 
-    font-size: 2rem; 
-    margin-bottom: 16px; 
-  }
-  
-  .hero-subtitle {
-     font-size: 1rem;
-     margin-bottom: 20px;
-  }
-  
-  .hero-description {
-     font-size: 0.95rem;
-  }
-
-  .section-title { 
-    font-size: 1.75rem; 
-  }
-  
-  /* Stack buttons */
-  .hero-buttons { 
-    flex-direction: column; 
-    width: 100%; 
-    gap: 12px;
-  }
-  
-  .hero-buttons .btn {
-    width: 100%;
-    justify-content: center;
-  }
-
-  /* Grids to single column */
-  .destinations-grid, 
-  .features-grid, 
-  .experiences-grid, 
-  .steps-grid { 
-    grid-template-columns: 1fr; 
-    gap: 20px;
-  }
-  
-  .what-we-do-content p {
-    font-size: 1rem;
-    text-align: left; /* Easier to read on mobile */
-  }
-  
-  .cta-buttons {
+  .hero-buttons {
     flex-direction: column;
-    width: 100%;
   }
+  
+  .hero-buttons .btn { width: 100%; }
 }

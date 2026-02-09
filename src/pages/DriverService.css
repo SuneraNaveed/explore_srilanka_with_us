@@ -1,198 +1,24 @@
-/* Hero Section - Compact & Modern */
-.page-hero {
-  position: relative;
-  height: 40vh;
-  min-height: 280px;
-  margin: 10px;
-  border-radius: 20px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--color-primary);
-}
+/* Driver Service Specific Styles */
 
-.page-hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)),
-                    url('../assets/Images/7ZM1XLJZRMSK0R.jpg');
-  background-size: cover;
-  background-position: center;
-}
-
-.page-hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  color: white;
-  max-width: 700px;
-  padding: 0 20px;
-}
-
-.hero-icon {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-  color: var(--color-accent);
-}
-
-.page-hero h1 {
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.page-hero p {
-  font-size: 1.1rem;
-  opacity: 0.9;
-}
-
-/* Driver Service Grid */
-.driver-info-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 30px;
-  padding: 40px 0;
-}
-
-.service-card {
+/* Info Box */
+.info-box-modern {
   background: white;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 8px 24px rgba(26, 60, 52, 0.04);
-  border: 1px solid rgba(224, 229, 228, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 100%;
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-xl);
+  border-left: 6px solid var(--color-accent);
+  box-shadow: var(--shadow-md);
+  margin-top: var(--spacing-xl);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 36px rgba(26, 60, 52, 0.08);
+.info-box-modern p {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: 1.05rem;
 }
 
-.service-card-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 15px;
-  margin-bottom: 20px;
-}
-
-.service-card-icon {
-  font-size: 1.5rem;
-  color: var(--color-accent);
-  background: rgba(217, 119, 87, 0.1);
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12px;
-}
-
-.service-card h2 {
-  font-size: 1.5rem;
+.info-box-modern strong {
   color: var(--color-primary);
-  margin: 0;
-  font-weight: 700;
-}
-
-/* Benefits & Suitable Lists */
-.service-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.service-list li {
-  padding: 8px 0;
-  padding-left: 28px;
-  position: relative;
-  color: var(--color-text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
-
-.service-list li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  color: var(--color-accent);
-  font-weight: 800;
-}
-
-.route-list li::before {
-  content: '→';
-}
-
-/* Note Section */
-.service-note-box {
-  text-align: center;
-  padding: 30px;
-  background: #f9fbfb;
-  border-radius: 20px;
-  margin: 20px 0 40px;
-  border: 1px solid rgba(224, 229, 228, 0.5);
-}
-
-.service-note-box p {
-  font-size: 0.95rem;
-  color: var(--color-text-secondary);
-  font-style: italic;
-  margin: 0;
-}
-
-/* CTA Section */
-.cta-section {
-  text-align: center;
-  padding: 60px 40px;
-  background: #f9fbfb;
-  border-radius: 20px;
-  margin-bottom: 60px;
-}
-
-.cta-icon {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: var(--color-accent);
-}
-
-.cta-section h2 {
-  color: var(--color-primary);
-  font-size: 2rem;
-  margin-bottom: 15px;
-}
-
-.cta-section p {
-  font-size: 1.1rem;
-  color: var(--color-text-secondary);
-  margin-bottom: 30px;
-}
-
-.cta-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-  .driver-info-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-  .page-hero {
-    height: 35vh;
-  }
-  
-  .cta-buttons {
-    flex-direction: column;
-  }
 }

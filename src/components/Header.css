@@ -4,7 +4,7 @@
   top: 0;
   z-index: 1000;
   background-color: #ffffff;
-  padding: 15px 0;
+  padding: var(--spacing-md) 0;
   transition: box-shadow 0.3s ease;
   width: 100%;
 }
@@ -19,7 +19,7 @@
   align-items: center;
   max-width: 1320px; /* Matched to new hero width */
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 var(--spacing-lg);
 }
 
 .logo-container {
@@ -36,7 +36,7 @@
 /* Navigation - Centered */
 .nav-menu {
   display: flex;
-  gap: 40px;
+  gap: var(--spacing-2xl);
   align-items: center;
   margin: 0 auto; /* Centers the nav */
 }
@@ -60,13 +60,13 @@
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: var(--spacing-md);
 }
 
 /* Mobile Toggle */
 .mobile-toggle {
   display: none;
-  font-size: 24px;
+  font-size: var(--font-size-2xl);
   color: var(--color-text-primary);
   background: none;
   border: none;
@@ -82,11 +82,11 @@
 
 @media (max-width: 768px) {
   .header {
-    padding: 10px 0;
+    padding: var(--spacing-sm) 0;
   }
   
   .header-container {
-    padding: 0 15px;
+    padding: 0 var(--spacing-md);
   }
 
   .mobile-toggle {
@@ -105,8 +105,8 @@
     background: #ffffff;
     flex-direction: column;
     align-items: flex-start;
-    padding: 80px 24px 24px;
-    gap: 20px;
+    padding: 80px var(--spacing-lg) var(--spacing-lg);
+    gap: var(--spacing-md);
     box-shadow: -5px 0 20px rgba(0,0,0,0.1);
     transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1001; /* Below toggle button */

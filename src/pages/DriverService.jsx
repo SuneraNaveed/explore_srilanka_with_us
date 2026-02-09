@@ -1,4 +1,4 @@
-import { FaCar, FaCheckCircle, FaRoute, FaUsers } from "react-icons/fa";
+import { FaCar, FaCheck, FaRoute, FaUserTie } from "react-icons/fa";
 import Button from "../components/Button";
 import "./DriverService.css";
 
@@ -32,65 +32,125 @@ function DriverService() {
         </div>
       </section>
 
-      {/* Driver Service Info Grid */}
-      <section className="section">
+      {/* Driver Service Info Grid using Premium Shared Classes */}
+      <section className="modern-section">
         <div className="container">
-          <div className="driver-info-grid">
-            {/* Why Choose a Private Driver */}
-            <div className="service-card">
-              <div className="service-card-header">
-                <div className="service-card-icon">
-                  <FaCheckCircle />
+          <div className="modern-intro">
+            <h2>Luxury Meets Reliability</h2>
+            <p>
+              We provide more than just a ride; we offer a local companion to
+              make your journey across Sri Lanka seamless and enjoyable.
+            </p>
+          </div>
+
+          <div className="modern-grid">
+            {/* Benefit Card */}
+            <div className="premium-card">
+              <div className="premium-card-header">
+                <div className="premium-card-icon">
+                  <FaUserTie />
                 </div>
-                <h2>Why Choose a Private Driver?</h2>
+                <h3>Why Choose Our Service?</h3>
               </div>
-              <ul className="service-list">
-                {benefits.map((benefit, index) => (
-                  <li key={index}>{benefit}</li>
-                ))}
-              </ul>
+
+              <div className="premium-card-body">
+                <p className="premium-card-desc">
+                  Enjoy the freedom of private travel with drivers who know the
+                  island intimately and prioritize your safety.
+                </p>
+
+                <div className="premium-highlights-box">
+                  <h4>Core Benefits</h4>
+                  <ul className="premium-highlights-list">
+                    {benefits.map((benefit, index) => (
+                      <li key={index}>
+                        <FaCheck className="list-icon" />
+                        <span>{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="premium-card-footer">
+                  <span className="premium-badge-text">
+                    <strong>Perfect for:</strong> Families, Couples, Solo
+                    Travelers
+                  </span>
+                </div>
+              </div>
             </div>
 
-            {/* Suitable For */}
-            <div className="service-card">
-              <div className="service-card-header">
-                <div className="service-card-icon">
+            {/* Service Options Card */}
+            <div className="premium-card">
+              <div className="premium-card-header">
+                <div className="premium-card-icon">
                   <FaRoute />
                 </div>
-                <h2>Suitable For</h2>
+                <h3>Flexible Service Options</h3>
               </div>
-              <ul className="service-list route-list">
-                {suitableFor.map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
-              </ul>
+
+              <div className="premium-card-body">
+                <p className="premium-card-desc">
+                  From single transfers to multi-day round trips, we adapt our
+                  services to fit your unique travel requirements.
+                </p>
+
+                <div className="premium-highlights-box">
+                  <h4>What We Offer</h4>
+                  <ul className="premium-highlights-list">
+                    {suitableFor.map((item, index) => (
+                      <li key={index}>
+                        <FaCheck className="list-icon" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="premium-card-footer">
+                  <span className="premium-badge-text">
+                    <strong>Service Area:</strong> Dynamic Routes Nationwide
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div className="service-note-box">
+          <div className="info-box-modern">
             <p>
-              Note: This service is intended to support independent travel and
-              flexibility rather than a strictly guided tour.
+              <strong>Note:</strong> This service is designed to support
+              independent, flexible travel. Your driver acts as a local expert
+              to help you navigate the island comfortably and safely at your own
+              pace.
             </p>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="container">
-        <div className="cta-section">
-          <h2>Interested in Our Driver Service?</h2>
-          <p>
-            Contact us to discuss your travel needs and receive a personalized
-            quote for a private car with driver.
-          </p>
-          <div className="cta-buttons">
-            <Button variant="primary" size="lg" href="/contact">
-              Request a Quote
-            </Button>
-            <Button variant="outline" size="lg" href="/tour-itineraries">
-              View Tour Itineraries
-            </Button>
+      {/* Premium Bottom CTA */}
+      <section className="premium-cta-section">
+        <div className="container">
+          <div className="premium-cta-container">
+            <div className="premium-cta-card">
+              <div className="premium-cta-content">
+                <h2>Ready to Book Your Local Driver?</h2>
+                <p>
+                  Contact us today to discuss your travel needs and receive a
+                  personalized quote for a private car with a dedicated driver.
+                </p>
+                <div className="premium-cta-actions">
+                  <Button variant="primary" size="lg" href="/contact">
+                    Request a Quote
+                  </Button>
+                  <Button variant="outline" size="lg" href="/tour-itineraries">
+                    View Itineraries
+                  </Button>
+                </div>
+              </div>
+              <div className="premium-cta-visual">
+                <FaCar className="premium-cta-icon" />
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -4,6 +4,7 @@ import {
   FaUtensils,
   FaLandmark,
   FaInfoCircle,
+  FaCheck,
 } from "react-icons/fa";
 import "./AboutSriLanka.css";
 
@@ -50,14 +51,11 @@ function AboutSriLanka() {
       {/* Hero Section */}
       <section className="page-hero">
         <div className="page-hero-content">
-          <h1>About Sri Lanka</h1>
+          <h1>Discover Sri Lanka</h1>
           <p>
-            Sri Lanka, known as the Pearl of the Indian Ocean, is a compact
-            island rich in history, nature, culture, and warm hospitality.
-            Within a few hours of travel, visitors can experience golden
-            beaches, misty mountains, ancient kingdoms, wildlife safaris, and
-            vibrant cities. This diversity makes Sri Lanka an ideal destination
-            for both short holidays and extended explorations.
+            The Pearl of the Indian Ocean—a compact island rich in history,
+            nature, culture, and warm hospitality. Experience the best of South
+            Asia in a single journey.
           </p>
         </div>
       </section>
@@ -65,30 +63,29 @@ function AboutSriLanka() {
       {/* Content Grid */}
       <section className="section">
         <div className="container">
-          <div className="about-grid">
+          <div className="grid-cards about-grid">
             {/* Why Visit */}
-            <div className="content-section">
-              <div className="section-header">
-                <div className="section-icon">
-                  <FaLandmark />
-                </div>
-                <h2>Why Visit Sri Lanka</h2>
+            <div className="card content-section">
+              <div className="card-header-icon">
+                <FaLandmark />
               </div>
-              <ul className="feature-list">
+              <h2>Why Visit Sri Lanka</h2>
+              <ul className="icon-list">
                 {whyVisit.map((item, index) => (
-                  <li key={index}>{item}</li>
+                  <li key={index}>
+                    <FaCheck className="list-icon" />
+                    <span>{item}</span>
+                  </li>
                 ))}
               </ul>
             </div>
 
             {/* Best Time to Visit */}
-            <div className="content-section">
-              <div className="section-header">
-                <div className="section-icon">
-                  <FaUmbrellaBeach />
-                </div>
-                <h2>Best Time to Visit</h2>
+            <div className="card content-section">
+              <div className="card-header-icon">
+                <FaUmbrellaBeach />
               </div>
+              <h2>Best Time to Visit</h2>
               <p>
                 Sri Lanka is a year-round destination with two distinct monsoon
                 systems affecting opposite sides of the island.
@@ -104,54 +101,65 @@ function AboutSriLanka() {
             </div>
 
             {/* Culture & Traditions */}
-            <div className="content-section">
-              <div className="section-header">
-                <div className="section-icon">
-                  <FaMountain />
-                </div>
-                <h2>Culture & Traditions</h2>
+            <div className="card content-section">
+              <div className="card-header-icon">
+                <FaMountain />
               </div>
+              <h2>Culture & Traditions</h2>
               <p>
                 A vibrant blend of spiritual heritage, ancient kingdoms, and
                 diverse religious influences.
               </p>
               <h4>Highlights</h4>
-              <ul className="feature-list">
-                <li>Vesak Festival (Buddhist celebrations)</li>
-                <li>Kandy Esala Perahera</li>
-                <li>Traditional Kandyan dance forms</li>
-                <li>Village lifestyles and customs</li>
+              <ul className="icon-list">
+                <li>
+                  <FaCheck className="list-icon" />
+                  <span>Vesak Festival</span>
+                </li>
+                <li>
+                  <FaCheck className="list-icon" />
+                  <span>Kandy Esala Perahera</span>
+                </li>
+                <li>
+                  <FaCheck className="list-icon" />
+                  <span>Traditional Dance</span>
+                </li>
+                <li>
+                  <FaCheck className="list-icon" />
+                  <span>Village Customs</span>
+                </li>
               </ul>
             </div>
 
             {/* Sri Lankan Food */}
-            <div className="content-section">
-              <div className="section-header">
-                <div className="section-icon">
-                  <FaUtensils />
-                </div>
-                <h2>Sri Lankan Food</h2>
+            <div className="card content-section">
+              <div className="card-header-icon">
+                <FaUtensils />
               </div>
+              <h2>Sri Lankan Food</h2>
               <p>Famous for rich spices, fresh coconut, and bold flavors.</p>
-              <h4>Popular Dishes</h4>
-              <ul className="feature-list">
+              <ul className="icon-list">
                 {dishes.map((dish, index) => (
-                  <li key={index}>{dish}</li>
+                  <li key={index}>
+                    <FaCheck className="list-icon" />
+                    <span>{dish}</span>
+                  </li>
                 ))}
               </ul>
             </div>
 
             {/* Travel Tips */}
-            <div className="content-section">
-              <div className="section-header">
-                <div className="section-icon">
-                  <FaInfoCircle />
-                </div>
-                <h2>Travel Tips</h2>
+            <div className="card content-section">
+              <div className="card-header-icon">
+                <FaInfoCircle />
               </div>
-              <ul className="feature-list">
+              <h2>Travel Tips</h2>
+              <ul className="icon-list">
                 {travelTips.map((tip, index) => (
-                  <li key={index}>{tip}</li>
+                  <li key={index}>
+                    <FaCheck className="list-icon" />
+                    <span>{tip}</span>
+                  </li>
                 ))}
               </ul>
             </div>

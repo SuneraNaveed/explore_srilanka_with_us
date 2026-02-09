@@ -1,6 +1,31 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import "./Destinations.css";
 
 function Destinations() {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const id = hash.replace("#", "");
+      const element = document.getElementById(id);
+      if (element) {
+        const timer = setTimeout(() => {
+          const headerOffset = 120; // Correct offset for sticky header
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition =
+            elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+        }, 150);
+        return () => clearTimeout(timer);
+      }
+    }
+  }, [hash]);
+
   const destinations = [
     {
       id: "colombo",
@@ -187,7 +212,7 @@ function Destinations() {
       <section className="section destinations-section">
         <div className="container">
           <div className="destinations-list">
-            {destinations.map((destination, index) => (
+            {destinations.map((destination) => (
               <div
                 key={destination.id}
                 id={destination.id}

@@ -4,8 +4,8 @@ import {
   FaPhone,
   FaFacebook,
   FaTripadvisor,
+  FaMapMarkerAlt,
 } from "react-icons/fa";
-import Button from "../components/Button";
 import "./Contact.css";
 
 function Contact() {
@@ -14,91 +14,104 @@ function Contact() {
       {/* Hero Section */}
       <section className="page-hero">
         <div className="page-hero-content">
-          <h1>Contact Us</h1>
+          <h1>Get in Touch</h1>
           <p>
-            We are happy to help you plan your Sri Lanka journey. Reach out to
-            us through any of the following methods for assistance with a
-            customized travel plan.
+            We are here to help you plan your perfect Sri Lanka journey. Reach
+            out through any of these methods for personalized assistance.
           </p>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="section">
+      {/* Contact Section using Premium Shared Classes */}
+      <section className="modern-section">
         <div className="container">
-          <div className="contact-info-wrapper">
-            {/* Contact Information */}
-            <div className="contact-info-container">
-              <h2 className="section-title">Get In Touch</h2>
+          <div className="modern-intro">
+            <h2>Contact Information</h2>
+            <p>
+              Quick response is our priority. Most inquiries are addressed
+              within 24 hours.
+            </p>
+          </div>
 
-              <div className="contact-info-grid">
-                <div className="contact-card card">
-                  <FaEnvelope className="contact-card-icon" />
-                  <div>
-                    <h4>Email Us</h4>
-                    <a href="mailto:withusexploresrilanka@gmail.com">
-                      withusexploresrilanka@gmail.com
-                    </a>
-                  </div>
+          <div className="modern-grid">
+            {/* Email Card */}
+            <div className="premium-card">
+              <div className="premium-card-header">
+                <div className="premium-card-icon">
+                  <FaEnvelope />
                 </div>
-
-                <div className="contact-card card">
-                  <FaWhatsapp className="contact-card-icon whatsapp" />
-                  <div>
-                    <h4>WhatsApp</h4>
-                    <a
-                      href="https://wa.me/94710733780"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      +94 71 07 33 780
-                    </a>
-                    <p className="contact-note">Quick responses via WhatsApp</p>
-                  </div>
-                </div>
-
-                <div className="contact-card card">
-                  <FaPhone className="contact-card-icon" />
-                  <div>
-                    <h4>Call Us</h4>
-                    <a href="tel:+94710733780">+94 71 07 33 780</a>
-                  </div>
+                <h3>Email Us</h3>
+              </div>
+              <div className="premium-card-body">
+                <p className="premium-card-desc">
+                  For detailed inquiries, itineraries, or documentation
+                  requests.
+                </p>
+                <div className="premium-highlights-box">
+                  <a
+                    href="mailto:withusexploresrilanka@gmail.com"
+                    className="contact-premium-link"
+                  >
+                    withusexploresrilanka@gmail.com
+                  </a>
                 </div>
               </div>
+            </div>
 
-              <div className="quick-action">
-                <h3>Connect With Us</h3>
-                <p>
-                  Follow us on social media for more travel inspiration and
-                  updates.
+            {/* WhatsApp Card */}
+            <div className="premium-card">
+              <div className="premium-card-header">
+                <div
+                  className="premium-card-icon"
+                  style={{
+                    background: "rgba(37, 211, 102, 0.1)",
+                    color: "#25D366",
+                  }}
+                >
+                  <FaWhatsapp />
+                </div>
+                <h3>WhatsApp</h3>
+              </div>
+              <div className="premium-card-body">
+                <p className="premium-card-desc">
+                  Fastest response time for quick questions and live travel
+                  support.
                 </p>
-                <div className="contact-social-links">
+                <div className="premium-highlights-box">
                   <a
-                    href="https://www.facebook.com/share/1Gsd9iUb82/"
+                    href="https://wa.me/94710733780"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="contact-social-button facebook"
+                    className="contact-premium-link"
                   >
-                    <FaFacebook /> <span>Facebook</span>
-                  </a>
-                  <a
-                    href="https://www.tripadvisor.com/Profile/Passenger20233050521"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="contact-social-button tripadvisor"
-                  >
-                    <FaTripadvisor /> <span>TripAdvisor</span>
+                    +94 71 07 33 780
                   </a>
                 </div>
-                <div style={{ marginTop: "20px" }}>
-                  <Button
-                    variant="whatsapp"
-                    size="lg"
-                    icon={<FaWhatsapp />}
-                    href="https://wa.me/94710733780"
-                  >
-                    Chat on WhatsApp
-                  </Button>
+                <div className="premium-card-footer">
+                  <span className="premium-badge-text">
+                    <strong>Typical Response:</strong> Under 1 Hour
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Phone Card */}
+            <div className="premium-card">
+              <div className="premium-card-header">
+                <div className="premium-card-icon">
+                  <FaPhone />
+                </div>
+                <h3>Call Us</h3>
+              </div>
+              <div className="premium-card-body">
+                <p className="premium-card-desc">
+                  Direct voice support for urgent matters or detailed planning
+                  calls.
+                </p>
+                <div className="premium-highlights-box">
+                  <a href="tel:+94710733780" className="contact-premium-link">
+                    +94 71 07 33 780
+                  </a>
                 </div>
               </div>
             </div>
@@ -106,15 +119,41 @@ function Contact() {
         </div>
       </section>
 
-      {/* Response Time */}
-      <section className="container">
-        <div className="response-section">
-          <h3>Typical Response: Within 24 Hours</h3>
-          <p>
-            Our team is dedicated to helping you plan the perfect Sri Lanka
-            journey. We'll review your inquiry and get back to you with
-            personalized recommendations.
-          </p>
+      {/* Social Connect Banner using Premium CTA Style */}
+      <section className="premium-cta-section">
+        <div className="container">
+          <div className="premium-cta-container">
+            <div className="premium-cta-card">
+              <div className="premium-cta-content">
+                <h2>Connect With Us</h2>
+                <p>
+                  Follow our journeys across the island. See client reviews,
+                  travel inspiration, and live updates from Sri Lanka.
+                </p>
+                <div className="premium-cta-actions">
+                  <a
+                    href="https://www.facebook.com/share/1Gsd9iUb82/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-premium-btn fb"
+                  >
+                    <FaFacebook /> <span>Facebook</span>
+                  </a>
+                  <a
+                    href="https://www.tripadvisor.com/Profile/Passenger20233050521"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-premium-btn ta"
+                  >
+                    <FaTripadvisor /> <span>TripAdvisor</span>
+                  </a>
+                </div>
+              </div>
+              <div className="premium-cta-visual">
+                <FaMapMarkerAlt className="premium-cta-icon" />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
